@@ -5,7 +5,6 @@
     - [What can you build on it?](nume/what-can-you-build-on-it.md)
     - [Fees](nume/fees.md)
   - [Key concepts](key-concepts.md)
-    - [Assets supported](key-concepts/assets-supported.md)
     - [Deep dive into asset transfers](key-concepts/dd-asset-transfers.md)
     - [Deep dive into nft collections and minting](key-concepts/dd-nft-collections-and-minting.md)
     - [Deep dive into deposits and withdrawals](key-concepts/dd-deposits-and-withdrawals.md)
