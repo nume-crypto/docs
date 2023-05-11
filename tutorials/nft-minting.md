@@ -12,6 +12,54 @@ Then metadata url for the NFT with token id 1 should be `https://ipfs.io/ipfs/Qm
 
 Currently token id of NFT is handled by Nume, so following this format will make NFT collection creation and NFT minting process smooth.
 
+# Deploy a sample ERC721 (NFT) contract on L1
+
+If you are familiar to NFT contract development, feel free to create your own contract and deploy using any tool/framework. To keep things simple for this tutorial we will create a NFT contract with minimal functions and use remix to deploy it on polygon mumbai.
+
+- remix - it is a browser based smart contract developemnt environment
+- polygon mumbai - we will deploy the contract on mumbai testnet, get some test matic from any faucet to deploy the collection and mint some NFTs
+
+```sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+
+contract MyToken is ERC721, Ownable {
+    using Counters for Counters.Counter;
+
+    Counters.Counter private _tokenIdCounter;
+
+    constructor() ERC721("MyToken", "MTK") {}
+
+    function _baseURI() internal pure override returns (string memory) {
+        return "https://ipfs.io/ipfs/QmZcH4YvBVVRJtdn4RdbaqgspFU8gH6P9vomDpBVpAL3u4";
+    }
+
+    function safeMint(address to) public {
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _safeMint(to, tokenId);
+    }
+}
+```
+
+Connect metmask on remix
+
+![Remix Injected Metamask Connection](../images/nft/remix-injected.png)
+
+Click on deploy to initiate contract creation transaction
+
+![Remix Injected Metamask Deployment](../images/nft/remix-deploy.png)
+
+Put the recipient address of the NFT and click on transact button of safeMint to mint the NFT
+
+![Remix Injected Metamask Minting](../images/nft/remix-mint.png)
+
+You can verify all these transactions using polygonscan.
+
 - Create a new folder for this project
 
 ```sh
