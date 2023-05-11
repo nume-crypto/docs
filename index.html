@@ -20,7 +20,9 @@
     .sidebar {
       width: 330px
     }
-
+    /* .sidebar ul li.active>a {
+      border-right: none;
+    } */
     body.close .sidebar {
         transform: translateX(-330px);
       }
@@ -39,6 +41,8 @@
         display: block;
         top: calc(-100% + 40px);
         background-color: inherit !important;
+        width: auto !important;
+        padding-right: 0px !important;
       }
       body.close .sidebar {
         transform: translateX(330px);
