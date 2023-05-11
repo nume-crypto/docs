@@ -18,6 +18,7 @@
     - [Token transfer and withdrawal](guides/token-transfer.md)
     - [NFT minting](guides/nft-minting.md)
     - [Webhooks](guides/webhooks.md)
+    - [JSON RPC](guides/jsonrpc-methods.md)
   - [Tutorials](tutorials.md)
     - [Build your own dapp on nume](tutorials/build-your-own-dapp-on-nume.md)
     - [Asset transfer](tutorials/asset-transfer.md)
