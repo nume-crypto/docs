@@ -1,7 +1,7 @@
 # Contact
 
 # Buiding on nume 
-Nume is open to all to build on, with no approvals required. If you want to talk to us to learn more, or apply for developer grants, (contact us)[https://numecrypto.com/contact].
+Nume is open to all to build on, with no approvals required. If you want to talk to us to learn more, or apply for developer grants, [contact us](https://numecrypto.com/contact).
 
 # Support 
 To get help from our technical support team, email support@numecrypto.com.
