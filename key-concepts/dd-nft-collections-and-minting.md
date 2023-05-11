@@ -17,7 +17,7 @@
 
 A collection is a smart contract that allows minting of NFTs. Let's create a sample NFT collection using openzeppelin libraries.
 
-```js
+```sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
@@ -39,7 +39,7 @@ contract contractName is ERC721, Ownable {
 
 Minting on Nume is same as minting on any L1, user submits a request to mint a token to an address with the collection address and it will be processed accordingly. Currently token id is handled by Nume to avoid any confusions, because there is a chance of same token being minted on L1 and also on Nume, this is duplication of NFTs and creates confusion among NFT holders. This way withdrawal to L1 can also be facilitated as NFTs with same token ids doesnt exist on both networks.
 
-```js
+```sol
 ---
 function safeMint(address to) public {
         uint256 tokenId = _tokenIdCounter.current();
@@ -53,7 +53,7 @@ function safeMint(address to) public {
 
 Transfer the NFT from one address to another
 
-```js
+```sol
 ---
 function transferFrom(address from, address to, uint256 tokenId) public virtual override {
 

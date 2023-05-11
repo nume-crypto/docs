@@ -15,7 +15,7 @@ ERC721 tokens are non-fungible tokens, meaning that each token is unique and not
 # ERC20 tokens supported on Nume
 
 - MATIC
-- WETH
+- ETH
 - WBTC
 - USDC
 - USDT
@@ -79,3 +79,8 @@ transferMethod
     console.error(`Error: ${error.message}`);
   });
 ```
+
+# Why you need to use Nume for asset transfer
+
+- Instant payment confirmation
+- Zero gas fees
