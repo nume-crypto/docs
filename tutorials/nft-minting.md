@@ -76,7 +76,7 @@ cd numeNFTCollection
 Make an API request to create an NFT (Non-Fungible Token) collection using the Numecrypto API.
 
 ```js
-const url = "http://api.numecrypto.com/v2/create-nft-collection";
+const url = "https://api.numecrypto.com/v2/create-nft-collection";
 const apiKey = "NUME-API-KEY";
 
 function callAPI(url, apiKey, data) {
@@ -128,7 +128,7 @@ Status code 200 will be returned for successful creation of NFT collection.
 Make an API request to mint an NFT (Non-Fungible Token) using the Numecrypto API.
 
 ```js
-const url = "http://api.numecrypto.com/v2/mint-nft";
+const url = "https://api.numecrypto.com/v2/mint-nft";
 const apiKey = "NUME-API-KEY";
 
 function callAPI(url, apiKey, data) {

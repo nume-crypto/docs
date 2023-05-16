@@ -16,7 +16,7 @@ Allows creation of NFT collection on Nume. Existing NFT collection on L1 can dep
 **Request**
 
 ```sh
-curl --location 'http://api.numecrypto.com/v2/create-nft-collection' \
+curl --location 'https://api.numecrypto.com/v2/create-nft-collection' \
 --header 'Content-Type: application/json' \
 --header 'NUME-API-KEY: NUME-API-KEY' \
 --data '{
@@ -51,7 +51,7 @@ Allows minting of NFT to an address on Nume.
 **Request**
 
 ```sh
-curl --location 'http://api.numecrypto.com/v2/mint-nft' \
+curl --location 'https://api.numecrypto.com/v2/mint-nft' \
 --header 'Content-Type: application/json' \
 --header 'NUME-API-KEY: NUME-API-KEY' \
 --data '{

@@ -6,6 +6,8 @@
 
 📄️ [NFT minting](./guides/nft-minting.md) In this section we will cover the different APIs related to the NFT minting.
 
+📄️ [NFT trades](./guides/nft-trades.md) In this section we will cover the different APIs related to the NFT trades.
+
 📄️ [Webhooks](./guides/webhooks.md) In this section we will cover how to integrate with our webhooks.
 
 📄️ [JSON RPC](./guides/jsonrpc-methods.md) In this section we will cover the JSON RPC methods supprted.
