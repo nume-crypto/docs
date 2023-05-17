@@ -3,7 +3,6 @@
     - [Fees](nume/fees.md)
 - [Key concepts](key-concepts.md)
   - [Deep dive into asset transfers](key-concepts/dd-asset-transfers.md)
-  - [Deep dive into nft collections and minting](key-concepts/dd-nft-collections-and-minting.md)
   - [Deep dive into deposits and withdrawals](key-concepts/dd-deposits-and-withdrawals.md)
   - [Deep dive into settlements and validators](key-concepts/dd-settlements-and-validators.md)
 - [Nume bridge](bridge.md)
