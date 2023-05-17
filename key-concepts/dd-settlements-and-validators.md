@@ -7,7 +7,7 @@
 > - What happens in a settlement?
 
 # Settlement
-Before going into settlements let's understand what a rollup is. A rollup is a layer 2 scaling solution that allows for off-chain computation and only commits the final state to the main chain. This allows for a large number of transactions to be processed in a single transaction on the main chain. The validators are responsible for submitting the rollup change.
+Before going into settlements let's understand what a rollup is. A rollup is a scaling solution that allows for off-chain processing of crypto transactions and only commits the final state to the main chain. This enables a large number of transactions to be processed in a single “settlement” transaction on the main chain.
 
 ### Settlement tree and leaf structure
 Settlement leaf is a data structure that contains the following information:
@@ -26,7 +26,7 @@ The balances root is a merkle root of the balances tree. The Balance leaf is a d
 - Asset address
 - Balance or NFT token Id
 - Metadata
-- Type (ERC20 reffered as 0 or ERC721 reffered as 1)
+- Type (ERC20 referred as 0 or ERC721 referred as 1)
 
 ```js
 ethers.utils.solidityKeccak256(
@@ -37,7 +37,7 @@ ethers.utils.solidityKeccak256(
 
 ?> Every user has a unique settlement leaf and every asset they own has a unique balance leaf.
 
-Assuming a settlement is ran every 1 hour, this will be the order of events. 
+<!-- Assuming a settlement is ran every 1 hour, this will be the order of events. 
 
 - User A has 100 MATIC 
 - User B has 100 MATIC
@@ -47,7 +47,7 @@ Assuming a settlement is ran every 1 hour, this will be the order of events.
 - User A transfers 50 MATIC to User B
 - User A withdraws 50 MATIC
 - User B withdraws 50 MATIC
-- Settlement X+1 starts 
+- Settlement X+1 starts  -->
 
 All these transactions along with their old balances is passed through a state transition function which is run and validated by very single validtor in our system. The state transition function verifies every single transaction that is being processed. After verifying the state transition function the validators compute the new settlement tree  ( as their balances changed ) and signs on message which contains the details of deposits and withdrawals processed and the new settlement root. This message is then submitted to the contract. The contract verifies the signatures and the new settlement root and updates the settlement root.
 

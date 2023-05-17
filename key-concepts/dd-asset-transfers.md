@@ -26,56 +26,23 @@ Asset transfers refer to the process of transferring ownership of digital assets
 # ERC20 token transfer
 
 ```js
-const ERC20TokenContract = contract({
-  abi: ERC20TokenContractABI,
-});
-const ERC20TokenAddress = "";
-async function transferERC20() {
-  const tokenContract = await ERC20TokenContract.at(ERC20TokenAddress);
-  const decimals = await tokenContract.decimals();
-  const amount = 10; // replace with the amount of tokens you want to transfer
-  const value = amount * 10 ** decimals;
-
-  const gasPrice = await web3.eth.getGasPrice();
-  const gasLimit = 21000;
-  const tx = await tokenContract.transfer(recipientAddress, value, {
-    from: senderAddress,
-    gasPrice: gasPrice,
-    gas: gasLimit,
-  });
-
-  console.log(`Transaction hash: ${tx.tx}`);
+const tx = {
+  to: web3.utils.toHex(ERC20_CONTRACT_ADDRESS),
+  gasLimit: web3.utils.toHex(0),
+  maxFeePerGas: web3.utils.toHex(web3.utils.toWei('0', 'gwei')),
+  maxPriorityFeePerGas: web3.utils.toHex(web3.utils.toWei('0', 'gwei')),
+  value: web3.utils.toHex(web3.utils.toWei('0', 'ether')),
+  nonce: web3.utils.toHex(USER_NONCE + 1),
+  chainId: web3.utils.toHex(NUME_CHAIN_ID),
+  accessList: [],
+  type: 2,
+  data:
+    '0xa9059cbb' + // transfer(address,uint256)
+    ethers.utils
+      .solidityPack(['address', 'uint256'], [toUserAddress, tokenValue])
+      .slice(2)
+      .padStart(128, '0'),
 }
-
-transferERC20();
+const signedTx = await wallet.signTransaction(tx)
 ```
-
-# ERC721 token transfer
-
-```js
-const gasPrice = await web3.eth.getGasPrice();
-const gasLimit = 300000; // adjust gas limit as needed
-const transferOptions = {
-  from: senderAddress,
-  gasPrice: gasPrice,
-  gas: gasLimit,
-};
-
-const transferMethod = contract.methods.transferFrom(
-  senderAddress,
-  recipientAddress,
-  tokenId
-);
-
-transferMethod
-  .send(transferOptions)
-  .on("transactionHash", (hash) => {
-    console.log(`Transaction hash: ${hash}`);
-  })
-  .on("receipt", (receipt) => {
-    console.log(`Transaction receipt: ${receipt}`);
-  })
-  .on("error", (error) => {
-    console.error(`Error: ${error.message}`);
-  });
-```
+?>  Use the signedTx for making the transfer [API call](../guides/asset-transfer.md)

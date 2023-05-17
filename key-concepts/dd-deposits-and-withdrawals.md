@@ -20,8 +20,8 @@ Users may want to transfer assets between Nume and zkEVM, depending on the layer
 # Deposits
 
 Here's what happens under the hood when a deposit is made on Nume:
-- User transfers the Token / MATIC from zkEVM to the Nume contract on zkEVM
-- The transfer function emits and event which is read by Nume's offchain and an asset identifier is created that represents the asset, so that it can be utilized and transacted with on nume.
+- User transfers the Token from zkEVM to the Nume contract on zkEVM
+- The transfer function emits an event which is read by Nume's server and an asset identifier is created that represents the asset, so that it can be utilized and transacted with on nume.
 
 Sample code for depositing ERC20
 ```js
