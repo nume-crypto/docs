@@ -41,6 +41,7 @@ const signedTx = await web3.eth.accounts.signTransaction({
 }, USER_PRIVATE_KEY)
 await web3.eth.sendSignedTransaction(signedTx.rawTransaction)
 ```
+?> Deposits are queued and processed in the next settlement.
 
 # Withdrawal
 There are 2 kinds of withdrawal supported by nume
