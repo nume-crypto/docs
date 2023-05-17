@@ -64,6 +64,6 @@ function transferFrom(address from, address to, uint256 tokenId) public virtual 
 ---
 ```
 
-# Withdrawal of NFT to L1
+# Withdrawal of NFT to zkEVM
 
-Ownership of NFT will be verified on Nume and withdrawal request will be processed. The exisitng NFT on Nume will be burnt/destroyed and the same token will be minted for the owner address on L1. Having a L1 minting contract is compulsary as of now to facilitate the minting of NFT, and contract has to implement **mintNFTFromNume** function to allow minting of token on L1 by Nume.
+Ownership of NFT will be verified on Nume and withdrawal request will be processed. The exisitng NFT on Nume will be burnt/destroyed and the same token will be minted for the owner address on zkEVM. Having a zkEVM minting contract is compulsary as of now to facilitate the minting of NFT, and contract has to implement **mintNFTFromNume** function to allow minting of token on zkEVM by Nume.
