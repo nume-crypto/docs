@@ -51,7 +51,7 @@ Here's what happens under the hood when a **trusted withdrawal** is made on Nume
 - User creates a withdrawal request on nume which will be processed in the next settlement 
 - When the new settlement root is signed off all the withdrawal requests will be processed and the user will receive the asset on zkEVM
 
-Sample code for submitting a trusted withdrawal request
+Guidelines for submitting a [trusted withdrawal request](./guides/token-transfer?id=create-transaction)
 
 Here's what happens under the hood when a **trustless withdrawal** is made on Nume:
 - User submits a withdrawal request to the zkEVM nume contract directly by providing his proof of ownership of the asset on Nume and 0.005 MATIC as stake.
