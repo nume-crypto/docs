@@ -78,7 +78,20 @@ Make an API request to create an NFT (Non-Fungible Token) collection using the N
 
 ```js
 const url = "https://api.numecrypto.com/v2/create-nft-collection";
-
+const personalSignCreateNft = async (user, nftContractAddress, lastTokenId, privateKey) => {
+  const provider = ethers.getDefaultProvider('mainnet')
+  const wallet = new ethers.Wallet(privateKey, provider)
+  try {
+    const hash = ethers.utils.solidityKeccak256(
+      ['address', 'address', 'uint256'],
+      [nftContractAddress, user, lastTokenId],
+    )
+    const signature = await wallet.signMessage(hash.slice(2))
+    return signature
+  } catch (error) {
+    console.error('Error:', error)
+  }
+}
 function callAPI(url, apiKey, data) {
   return fetch(url, {
     method: "POST",
@@ -94,7 +107,12 @@ function callAPI(url, apiKey, data) {
     })
     .catch((error) => console.error("API error:", error));
 }
-
+const signature = await personalSignCreateNft(
+  "0x447bF33F7c7C925eb7674bCF590AeD4Aa57e656b",
+  "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+  0,
+  PRIVATE_KEY,
+)
 const requestData = {
   name: "NumeNFT", // name of the NFT collection
   owner: "0x447bF33F7c7C925eb7674bCF590AeD4Aa57e656b", // owner address of the collection
@@ -107,6 +125,7 @@ const requestData = {
   lastTokenId: 0, // last minted token id on zkEVM (token id continuation will be done to avoid confusion)
   baseUri:
     "https://ipfs.io/ipfs/QmVLbfDpBj9XxXCCgWwhshpAQE9X23skZ8SfpUPn29HhnQ", // base uri of the collection (will be used for metadata of NFTs)
+  signature,
 };
 
 callAPI(url, apiKey, requestData).then((responseData) => {
@@ -133,7 +152,17 @@ Make an API request to mint an NFT (Non-Fungible Token) using the Numecrypto API
 
 ```js
 const url = "https://api.numecrypto.com/v2/mint-nft";
-
+const personalSignMintNft = async (user, nftContractAddress, privateKey) => {
+  const provider = ethers.getDefaultProvider('mainnet')
+  const wallet = new ethers.Wallet(privateKey, provider)
+  try {
+    const hash = ethers.utils.solidityKeccak256(['address', 'address'], [nftContractAddress, user])
+    const signature = await wallet.signMessage(hash.slice(2))
+    return signature
+  } catch (error) {
+    console.error('Error:', error)
+  }
+}
 function callAPI(url, apiKey, data) {
   return fetch(url, {
     method: "POST",
@@ -149,10 +178,16 @@ function callAPI(url, apiKey, data) {
     })
     .catch((error) => console.error("API error:", error));
 }
-
+const signature = await personalSignMintNft(
+  "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
+  "0x6D9E72D1336e3592F5E4844B9e18E484fC4cf344",
+  0,
+  PRIVATE_KEY,
+)
 const data = {
   contractAddress: "0x6D9E72D1336e3592F5E4844B9e18E484fC4cf344", // contract address of the NFT collection
   MintUser: "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a", // recipient address to which the NFT to be minted
+  signature
 };
 
 callAPI(url, apiKey, data)

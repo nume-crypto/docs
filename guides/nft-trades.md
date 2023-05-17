@@ -123,7 +123,8 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/transaction-
                 "FromUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
                 "ToUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
                 "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
-                "Amount": "2",
+                "ListAmount": "2",
+                "BuyAmount": "2",
                 "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
                 "NftTokenId": 18,
                 "CreatedAt": "2023-05-16T11:30:44.449332+05:30"
@@ -133,7 +134,8 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/transaction-
                 "FromUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
                 "ToUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
                 "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
-                "Amount": "2",
+                "ListAmount": "2",
+                "BuyAmount": "2",
                 "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
                 "NftTokenId": 18,
                 "CreatedAt": "2023-05-15T19:40:10.428619+05:30"
