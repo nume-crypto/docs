@@ -98,7 +98,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/buy-nft' \
 
 ## Get NFT transaction history
 
-Endpoint : `POST /marketplace/transaction-history/:contractAddress/:tokenId`
+Endpoint : `GET /marketplace/transaction-history/:contractAddress/:tokenId`
 
 **Request**
 ```sh
