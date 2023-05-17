@@ -78,14 +78,12 @@ Make an API request to create an NFT (Non-Fungible Token) collection using the N
 
 ```js
 const url = "https://api.numecrypto.com/v2/create-nft-collection";
-const apiKey = "NUME-API-KEY";
 
 function callAPI(url, apiKey, data) {
   return fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "NUME-API-KEY": apiKey,
     },
     body: JSON.stringify(data),
   })
@@ -135,14 +133,12 @@ Make an API request to mint an NFT (Non-Fungible Token) using the Numecrypto API
 
 ```js
 const url = "https://api.numecrypto.com/v2/mint-nft";
-const apiKey = "NUME-API-KEY";
 
 function callAPI(url, apiKey, data) {
   return fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "NUME-API-KEY": apiKey,
     },
     body: JSON.stringify(data),
   })
