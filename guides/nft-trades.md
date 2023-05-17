@@ -95,3 +95,53 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/buy-nft' \
 ```
 
 -------------------------------------------------------------------------------------------------------
+
+## Get NFT transaction history
+
+Endpoint : `POST /marketplace/transaction-history/:contractAddress/:tokenId`
+
+**Request**
+```sh
+curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/transaction-history/0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344/18'
+```
+
+**Parameters:**
+
+| Name          | Type        | Description                                 |
+|---------------|-------------|---------------------------------------------|
+| contractAddress | string | Address of the NFT contract |
+| tokenId | string | Token ID of the NFT |
+
+**Example response:**
+
+```json
+{
+    "message": {
+        "Transactions": [
+            {
+                "OrderId": "0c27ecb1-0551-461c-87ae-e38506bec225",
+                "FromUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
+                "ToUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
+                "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
+                "Amount": "2",
+                "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+                "NftTokenId": 18,
+                "CreatedAt": "2023-05-16T11:30:44.449332+05:30"
+            },
+            {
+                "OrderId": "95f0df4a-d5b6-4ee1-aaf4-f4ad3ba2cf4c",
+                "FromUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
+                "ToUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
+                "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
+                "Amount": "2",
+                "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+                "NftTokenId": 18,
+                "CreatedAt": "2023-05-15T19:40:10.428619+05:30"
+            }
+        ]
+    },
+    "statusCode": 200
+}
+```
+
+-------------------------------------------------------------------------------------------------------
