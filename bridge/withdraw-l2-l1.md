@@ -1,4 +1,4 @@
-# Withdraw from L2 to L1
+# Withdraw from Nume to zkEVM
 To move your funds back to Polygon Mainnet, your need to be logged in to the Nume bridge with your wallet and make sure you are connected to the Nume network.
 
 ![Add network](../images/bridge/withdraw.png)

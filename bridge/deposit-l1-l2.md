@@ -1,4 +1,4 @@
-# Deposit from L1 to L2
+# Deposit from zkEVM to Nume
 To move your MATIC and tokens to Nume chain, visit [bridge.numecrypto.com](https://bridge.numecrypto.com) Login to the bridge with your wallet and make sure you are connected to the Polygon mainnet network.
 
 ![Add network](../images/bridge/bridge.png)

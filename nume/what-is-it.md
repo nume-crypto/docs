@@ -8,12 +8,13 @@ Nume is a platform that provides:
 
 
 ## Designed on First Principles
-With Optimistic rollups(ORs), transactions are inexpensive but users need to wait 2 weeks to withdraw funds. Zk-rollups enable quick exit but are computationally expensive. Nume achieves costs lower than ORs while enabling ZK-like fast liquidity exit. Our protocol is based on a validity-proof system that is not a zk-rollup. 
+Nume is a high-scale trustless asset transfer protocol. With Optimistic rollups(ORs), transactions are inexpensive but settlements have delayed finality due to its fraud proof mechanism. Zk-rollups have instant settlement finality but are expensive due to off-chain computation resources (required for the zk proof generation) and on-chain data commitment (required to guarantee data availability). Nume provides the same security guarantees as OR/ZK systems as a validity proof system that is neither zk-based nor commits data on-chain. Hence Nume’s costs are much lower than theirs, affording for monetization strategies that is entirely gas-abstracted. Note, however, that the Nume protocol is not EVM/smart-contract compatible. We are deployed as a Layer 3 on zkEVM which allows us to tap into the network efforts of a scalable robust EVM-compatible platform while driving the cost down for asset transfers even further.
 
-Key features: 
+Key features of the Nume protocol::
 - **Trustless Security** Nume does not make any trust assumptions on top of zkEVM. If you trust zkEVM, you can trust Nume. 
 - **Data Availability** Every user is revealed sufficient information about each settlement to be able to withdraw their funds trustlessly and directly from the contract at any time.
 - **Non-custodial** The Nume Protocol is non-custodial and guarantees that a settlement with unauthorized changes to users’ balances will not succeed on-chain.
+- **Instant Confirmation** No blockchain delays, payments are confirmed instantly on Nume. Close the loop for your customers.
 - **Decentralized Governance** (COMING SOON) The protocol is governed by validators. Any changes to the Nume off chain state verification algorithm requires validators’ signature.
 
 <!-- ## Benefits of building on layer 2 vs. layer 1

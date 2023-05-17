@@ -11,7 +11,7 @@
 - **NFT Collection** - smart contract to facilitate minting, transfers etc
 - **Minting** - creating a new NFT in the collection
 - **Transfer** - send NFTs from one address to another
-- **Withdrawal** - withdraw the NFT from Nume to L1
+- **Withdrawal** - withdraw the NFT from Nume to zkEVM
 
 # Creating NFT collection
 
