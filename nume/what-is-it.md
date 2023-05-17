@@ -1,18 +1,43 @@
 # What is it?
 
-Nume is a gas-free, scalable and secure web3 payments protocol with primitives tailored for commerce.
+Nume is a gas abstracted, scalable and secure web3 payments protocol with primitives tailored for commerce. Nume chose to build on zkEVM because it is the most scalable EVM-compatible infrastructure  platform on Ethereum.
 
-It is a platform that provides:
-- Layer 2 solutions on the most secure and decentralized layer 1 - Ethereum
-- APIs and developer tools that make it easy to build on layer 2
+Nume is a platform that provides:
+- low-cost scaling solution for crypto asset transfers deployed as a Layer 3 on zkEVM which settles on the most secure and decentralized layer 1 - Ethereum
+- APIs and developer tools aimed at making the development of web3 commerce applications hassle-free
+
 
 ## Designed on First Principles
+With Optimistic rollups(ORs), transactions are inexpensive but users need to wait 2 weeks to withdraw funds. Zk-rollups enable quick exit but are computationally expensive. Nume achieves costs lower than ORs while enabling ZK-like fast liquidity exit. Our protocol is based on a validity-proof system that is not a zk-rollup. 
 
-- **Trustless Security** Nume does not make any trust assumptions on top of Ethereum. If you trust Ethereum, you can trust Nume. 
+Key features: 
+- **Trustless Security** Nume does not make any trust assumptions on top of zkEVM. If you trust zkEVM, you can trust Nume. 
 - **Data Availability** Every user is revealed sufficient information about each settlement to be able to withdraw their funds trustlessly and directly from the contract at any time.
 - **Non-custodial** The Nume Protocol is non-custodial and guarantees that a settlement with unauthorized changes to users’ balances will not succeed on-chain.
-- **Decentralized Governance** The protocol is governed by validators. Any changes to the Nume off chain state verification algorithm requires validators’ signature.
+- **Decentralized Governance** (COMING SOON) The protocol is governed by validators. Any changes to the Nume off chain state verification algorithm requires validators’ signature.
 
-## Why Ethereum?
-Immutable chose to build on Ethereum because it is the most decentralized, secure and widely-used blockchain, giving rise to the greatest network effects.
-It is a technology that enables smart contracts and decentralized applications to be built and run without any downtime, fraud, control or interference from a third party.
+<!-- ## Benefits of building on layer 2 vs. layer 1
+- **No gas fees** Transactions on layer 2 are free. This means that users can interact with your application without having to pay gas fees.
+- **Limitless Scalability** Our protocol is built to support massive scale. If existing rails have not met your scaling needs, look no further. 
+- **Instant Confirmation** No blockchain delays, payments are confirmed instantly on Nume. Close the loop for your customers.
+- **Fast Liquidity** Transactions are settled every thirty minutes on ethereum and can be withdrawn anytime after. Access your liquidity soon after a payment is made.
+- **Micropayments** Nume high scale and gas-agnostic monetization model enables you to accept one-off or streaming micropayments with a few lines of code today. -->
+
+## EVM addressability
+The Nume Protocol is fully EVM-addressable and sits behind an EVM wrapper, which means your favourite Web3 wallets and domain names will just work! Please not how ever that Nume protocol is not smart contract compatible.
+
+## What you can build on it?
+Nume provides the key functionality you’ll need to build web3 payments, token-gated commerce, web3 games or NFT applications without having to deploy your own complicated smart contracts. There is no gas associated with any of the actions. To understand how fees work in nume network please refer to [fees](nume/fees.md) section.
+
+1. **Facilitate user transactions**
+These enable users to do things that update state on the blockchain. These transactions include:
+
+- Minting NFTs
+- Transferring assets to other users
+- Depositing assets to nume (ie. ERC20 tokens)
+- Buying and selling assets
+
+2. Retrieve data about current state and historical transactions
+- Asset data : Details about non-fungible tokens on Nume, like metadata, image URL, current owner, etc.
+- Order data : Details about orders, like sale price, sale period, etc.
+- User data : Details about users, like the types of tokens they own and the balance of each token.

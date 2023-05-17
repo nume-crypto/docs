@@ -1,6 +1,5 @@
 - [Getting started](README.md)
     - [What is it?](nume/what-is-it.md)
-    - [What are its solutions?](nume/what-are-its-solutions.md)
     - [Fees](nume/fees.md)
 - [Key concepts](key-concepts.md)
   - [Deep dive into asset transfers](key-concepts/dd-asset-transfers.md)

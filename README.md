@@ -1,6 +1,6 @@
 # 👷 I want to start building
 
-Find out about [our SDKs and how they work together](https://docs.numecrypto.com)
+We offer REST APIs for other developers to build on top of Nume. Plans on SDK and other tools are in the works.
 
 ## Get started with nume
 
