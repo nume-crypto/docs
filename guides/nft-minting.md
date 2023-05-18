@@ -83,7 +83,7 @@ curl --location 'https://api.numecrypto.com/v2/mint-nft' \
     "message": {
         "ContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
         "MintUser": "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
-        "NftTokenId": 19
+        "NftTokenId": "19"
     },
     "statusCode": 200
 }
