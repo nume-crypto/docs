@@ -39,7 +39,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/list-nft' \
     "message": {
         "Nfts": [
             {
-                "OrderId": "0c27ecb1-0551-461c-87ae-e38506bec225",
+                "OrderId": "c0ab9ec2-8d33-41e6-bb37-5b88435d3479",
                 "FromUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
                 "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
                 "Amount": "2",
@@ -95,6 +95,39 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/buy-nft' \
 ```
 
 -------------------------------------------------------------------------------------------------------
+## Unlist NFT
+
+Endpoint : `POST /marketplace/unlist-nft`
+
+**Request**
+```sh
+curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/unlist-nft' \
+--header 'Content-Type: application/json' \
+--data '{
+    "user": "0x1b34B2f706cDA183E4818D2ceaF58253CcAb3428",
+    "orderId": "c0ab9ec2-8d33-41e6-bb37-5b88435d3479",
+    "signature": "0xcd728264cad44fdee67b56e531937743400ed477de4c6d2d364e9c44a618b40e068d9b6364a7c7e86e36fc799aafc99b0c6b365cedcc1b4b4d4fc71a29f0e2691b"
+}'
+```
+
+**Parameters:**
+
+| Name          | Type        | Description                                 |
+|---------------|-------------|---------------------------------------------|
+| user          | string      | Address for the listing user |
+| orderId | string | Listing order ID |
+| signature | string | Signature of the order ID |
+
+**Example response:**
+
+```json
+{
+    "message": "success",
+    "statusCode": 200
+}
+```
+
+-------------------------------------------------------------------------------------------------------
 
 ## Get NFT transaction history
 
@@ -117,6 +150,13 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/transaction-
 ```json
 {
     "message": {
+        "MintData": {
+            "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+            "NftTokenId": "18",
+            "TokenUri": "https://ipfs.io/ipfs/QmZcH4YvBVVRJtdn4RdbaqgspFU8gH6P9vomDpBVpAL3u4/18",
+            "MintedBy": "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
+            "MintedAt": "2023-05-09T17:05:20.018447+05:30"
+        },
         "Transactions": [
             {
                 "OrderId": "0c27ecb1-0551-461c-87ae-e38506bec225",
