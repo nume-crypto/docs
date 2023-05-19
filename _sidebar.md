@@ -4,7 +4,6 @@
 - [Key concepts](key-concepts.md)
   - [Deep dive into asset transfers](key-concepts/dd-asset-transfers.md)
   - [Deep dive into deposits and withdrawals](key-concepts/dd-deposits-and-withdrawals.md)
-  - [Deep dive into settlements and validators](key-concepts/dd-settlements-and-validators.md)
 - [Nume bridge](bridge.md)
   - [Add a Network](bridge/add-a-network.md)
   - [Deposit Your Tokens](bridge/deposit-l1-l2.md)
