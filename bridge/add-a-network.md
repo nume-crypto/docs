@@ -8,8 +8,8 @@ To start using the Nume bridge, you need to add the desired chain's RPC endpoint
 ![Add network form](../images/bridge/mm-add-network-form.png)
 
 **Nume Polygon testnet** :
-- Network Name: Nume mumbai
-- New RPC URL: https://dev.rpc.numecrypto.com
+- Network Name: Nume testnet
+- New RPC URL: https://rpc.numecrypto.com
 - Chain ID: 710
 - Currency Symbol: MATIC
 - Block Explorer URL: https://dev.explorer.numecrypto.com
