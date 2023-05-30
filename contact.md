@@ -1,13 +1,13 @@
 # Contact
 
 # Buiding on nume 
-Nume is open to all to build on, with no approvals required. If you want to talk to us to learn more, or apply for developer grants, [contact us](https://numecrypto.com/contact).
+Nume is open to all to build on, with no approvals required. If you want to talk to us to learn more, [contact us](https://numecrypto.com/contact).
 
 # Support 
 To get help from our technical support team, email support@numecrypto.com.
 
-# Discord
-To get help from other developers, discuss ideas, and stay up-to-date on what's happening, become a part of our community on [Discord](https://discord.gg/nume).
+<!-- # Discord
+To get help from other developers, discuss ideas, and stay up-to-date on what's happening, become a part of our community on [Discord](https://discord.gg/nume). -->
 
 # System status
 To check the status of the Nume system, visit [status.numecrypto.com](https://status.numecrypto.com).
