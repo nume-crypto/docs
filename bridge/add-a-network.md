@@ -11,7 +11,7 @@ To start using the Nume bridge, you need to add the desired chain's RPC endpoint
 - Network Name: Nume testnet
 - New RPC URL: https://rpc.numecrypto.com
 - Chain ID: 710
-- Currency Symbol: MATIC
+- Currency Symbol: DAI
 - Block Explorer URL: https://dev.explorer.numecrypto.com
 
 <!-- **Nume Polygon mainnet** :
