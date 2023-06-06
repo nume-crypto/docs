@@ -20,3 +20,9 @@ Fees are additional amounts that a user pays to the network for the use of the n
 - WBTC
 - ETH
 - MATIC
+- BUSD
+- LINK
+- ADA
+- COSMOS
+- DOT
+- UNI
