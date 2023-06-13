@@ -14,3 +14,6 @@ Fees are additional amounts that a user pays to the network for the use of the n
 | NFT trades            | NFT is sent, payment (ERC-20) is received                  | 0.30 DAI    |
 |Creator fee on trades    | NFT collection creators can choose to set either a fixed or a % royalty fee to be collected each time an NFT they created is traded.  *Royalties cannot be collected on NFT sends.                    | % (set by creator) - Not capped by the protocol |
 |Creator fee on mints         | NFT collection creators can choose to set either a fixed to be collected upon minting of the NFT.               | fixed fee (set by creator) - Not capped by the protocol |
+
+
+?> **While doing asset transfers through metamask you might notice that the estimated gas will be off by a bit but the network will charge only 0.05 DAI.**

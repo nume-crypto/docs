@@ -14,6 +14,14 @@ To start using the Nume bridge, you need to add the desired chain's RPC endpoint
 - Currency Symbol: DAI
 - Block Explorer URL: https://dev.explorer.numecrypto.com
 
+<!-- **Nume Polygon testnet tokens** :
+- MATIC: ```0x1111111111111111111111111111111111111111``` ( 18 decimals ) import as ERC20
+- DAI: ```0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80``` ( 18 decimals ) native
+- USDC: ```0xE9573B8A0AF951431bcBD194E8cc3AeE654Cd723``` ( 6 decimals ) import as ERC20
+- USDT: ```0xCE47C48fDF8c9355FDbE4DacC1e1954914D65Be6``` ( 6 decimals ) import as ERC20
+- WBTC: ```0x799c6832d187243f3367902079A72fb3Fd61cdF7``` ( 8 decimals ) import as ERC20
+- WETH: ```0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D``` ( 18 decimals ) import as ERC20 -->
+
 <!-- **Nume Polygon mainnet** :
 - Network Name: Nume
 - New RPC URL: https://rpc.numecrypto.com
