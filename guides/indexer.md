@@ -30,8 +30,8 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/address/
         "quote": 8.898919324006927,
         "quote_rate": 0.9998785757311154,
         "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
-        "quote_rate_24h": "0",
-        "quote_pct_change_24h": 0,
+        "quote_rate_24h": -0.00008935522267550233,
+        "quote_pct_change_24h": -0.0003895167635670216,
         "verified": true,
         "coin_gecko_id": ""
     },
@@ -46,8 +46,8 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/address/
         "quote": 6.816630930323962,
         "quote_rate": 1745.4984862015535,
         "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/eth.svg",
-        "quote_rate_24h": "0",
-        "quote_pct_change_24h": 0,
+        "quote_rate_24h": -30.04422726003645,
+        "quote_pct_change_24h": 1684.3922056173801,
         "verified": true,
         "coin_gecko_id": ""
     }
@@ -91,8 +91,8 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v2/nume/address/
             "quote": 0,
             "quote_rate": 0,
             "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
-            "quote_rate_24h": "0",
-            "quote_pct_change_24h": 0,
+            "quote_rate_24h": -0.00008935522267550233,
+            "quote_pct_change_24h": -0.0003895167635670216,
             "verified": true,
             "coin_gecko_id": ""
         },
@@ -107,8 +107,8 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v2/nume/address/
             "quote": 0,
             "quote_rate": 0,
             "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/eth.svg",
-            "quote_rate_24h": "0",
-            "quote_pct_change_24h": 0,
+            "quote_rate_24h": -30.04422726003645,
+            "quote_pct_change_24h": 1684.3922056173801,
             "verified": true,
             "coin_gecko_id": ""
         }
@@ -170,7 +170,9 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v3/nume/address/
                     "value": "270000",
                     "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/usdc.svg",
                     "from": "0x995227bd4dbfcd247fd7c97edba86c4ad46bfb05",
-                    "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613"
+                    "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
+                    "quote": 0.26993889955640804,
+                    "quote_rate": 0.9997737020607704
                 }
             ],
             "received": [],
@@ -203,7 +205,9 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v3/nume/address/
                     "value": "660000000000000000",
                     "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
                     "from": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
-                    "to": "0xdc42d1dd82217013b79eba43673912c4a3fc7bea"
+                    "to": "0xdc42d1dd82217013b79eba43673912c4a3fc7bea",
+                    "quote": 0.6598019110886044,
+                    "quote_rate": 0.9996998652857643
                 }
             ],
             "input_data": "0x"
@@ -234,7 +238,9 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v3/nume/address/
                     "value": "280000000000000032",
                     "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
                     "from": "0x11c830b25a15e39006094377fdc409c11c002b48",
-                    "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613"
+                    "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
+                    "quote": 0.27991596228001403,
+                    "quote_rate": 0.9996998652857643
                 }
             ],
             "received": [],
@@ -290,7 +296,9 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/transact
             "value": "270000",
             "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/usdc.svg",
             "from": "0x995227bd4dbfcd247fd7c97edba86c4ad46bfb05",
-            "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613"
+            "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
+            "quote": 0.26993889955640804,
+            "quote_rate": 0.9997737020607704
         }
     ],
     "received": null,
