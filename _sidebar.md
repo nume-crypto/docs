@@ -16,6 +16,7 @@
   - [NFT trades](guides/nft-trades.md)
   - [Webhooks](guides/webhooks.md)
   - [JSON RPC](guides/jsonrpc-methods.md)
+  - [Indexer](guides/indexer.md)
 - [Tutorials](tutorials.md)
   - [Build your own dapp on nume](tutorials/build-your-own-dapp-on-nume.md)
   - [Asset transfer](tutorials/asset-transfer.md)

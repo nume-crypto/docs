@@ -11,3 +11,6 @@
 📄️ [Webhooks](./guides/webhooks.md) In this section we will cover how to integrate with our webhooks.
 
 📄️ [JSON RPC](./guides/jsonrpc-methods.md) In this section we will cover the JSON RPC methods supprted.
+
+
+📄️ [Indexer](./guides/indexer.md) In this section we will cover the indexer APIs.
