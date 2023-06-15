@@ -7,8 +7,7 @@ Fees are additional amounts that a user pays to the network for the use of the n
 
 | Operation       | Definition   | Cost (per transaction)    |
 |---------------|-------------|-------------|
-| Token sends (DAI)     | DAI sends                  |Free     | 
-| Token sends (other tokens)     | Sending other supported token on the Nume network: USDC, USDT, WBTC, MATIC, ETH      | 0.05 DAI      |
+| Token sends     | Sending supported token on the Nume network: DAI, USDC, USDT, WBTC, MATIC, ETH’      | 0.05 DAI      |
 | NFT sends         | One-directional NFT send - nothing is received in return                   | 0.05 DAI      |
 | NFT mints          | Minting an NFT                   | 0.10 DAI      |
 | NFT trades            | NFT is sent, payment (ERC-20) is received                  | 0.30 DAI    |
