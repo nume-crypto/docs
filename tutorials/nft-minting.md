@@ -14,7 +14,8 @@ Currently token id of NFT is handled by Nume, so following this format will make
 
 # Deploy a sample ERC721 (NFT) contract on zkEVM
 
-If you are familiar to NFT contract development, feel free to create your own contract and deploy using any tool/framework. 
+If you are familiar to NFT contract development, feel free to create your own contract and deploy using any tool/framework.
+
 <!-- To keep things simple for this tutorial we will create a NFT contract with minimal functions and use remix to deploy it on polygon mumbai. -->
 
 <!-- - remix - it is a browser based smart contract developemnt environment
@@ -78,20 +79,59 @@ Make an API request to create an NFT (Non-Fungible Token) collection using the N
 
 ```js
 const url = "https://api.numecrypto.com/v2/create-nft-collection";
-const personalSignCreateNft = async (user, nftContractAddress, lastTokenId, privateKey) => {
-  const provider = ethers.getDefaultProvider('mainnet')
-  const wallet = new ethers.Wallet(privateKey, provider)
+const personalSignCreateNft = async (
+  user,
+  nftContractAddress,
+  firstTokenId,
+  lastTokenId,
+  mintUsers,
+  mintFees,
+  mintFeesToken,
+  royaltyPercent,
+  baseUri,
+  privateKey
+) => {
+  const provider = ethers.getDefaultProvider("mainnet");
+  const wallet = new ethers.Wallet(privateKey, provider);
   try {
+    const types = [];
+    const values = [];
+    mintUsers.forEach((mintUser) => {
+      types.push("uint256");
+      values.push(mintUser);
+    });
+    const mintUsersHash = ethers.utils.solidityKeccak256(types, values);
+    const baseUriHash = ethers.utils.solidityKeccak256(["string"], [baseUri]);
     const hash = ethers.utils.solidityKeccak256(
-      ['address', 'address', 'uint256'],
-      [nftContractAddress, user, lastTokenId],
-    )
-    const signature = await wallet.signMessage(hash.slice(2))
-    return signature
+      [
+        "address",
+        "address",
+        "uint256",
+        "uint256",
+        "bytes32",
+        "uint256",
+        "address",
+        "uint256",
+        "bytes32",
+      ],
+      [
+        nftContractAddress,
+        user,
+        firstTokenId,
+        lastTokenId,
+        mintUsersHash,
+        mintFees,
+        mintFeesToken,
+        royaltyPercent,
+        baseUriHash,
+      ]
+    );
+    const signature = await wallet.signMessage(hash.slice(2));
+    return signature;
   } catch (error) {
-    console.error('Error:', error)
+    console.error("Error:", error);
   }
-}
+};
 function callAPI(url, apiKey, data) {
   return fetch(url, {
     method: "POST",
@@ -110,21 +150,27 @@ function callAPI(url, apiKey, data) {
 const signature = await personalSignCreateNft(
   "0x447bF33F7c7C925eb7674bCF590AeD4Aa57e656b",
   "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
-  0,
-  PRIVATE_KEY,
-)
+  "0",
+  "100",
+  ["0x447bF33F7c7C925eb7674bCF590AeD4Aa57e656b"],
+  "1000000000000000000",
+  "0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80",
+  "0",
+  "https://ipfs.io/ipfs/QmVLbfDpBj9XxXCCgWwhshpAQE9X23skZ8SfpUPn29HhnQ",
+  PRIVATE_KEY
+);
 const requestData = {
   name: "NumeNFT", // name of the NFT collection
   owner: "0x447bF33F7c7C925eb7674bCF590AeD4Aa57e656b", // owner address of the collection
   contractAddress: "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344", // contract address of the collection on zkEVM
-  mintUsers: [
-    "0xDc42d1dd82217013B79EBA43673912C4a3fC7bEA",
-    "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
-    "0x7771E6fE5245A04a94329A71b5c37aAcC22cCf53",
-  ], // array of addresses that can mint NFTs from collection on Nume
-  lastTokenId: 0, // last minted token id on zkEVM (token id continuation will be done to avoid confusion)
+  mintUsers: ["0x447bF33F7c7C925eb7674bCF590AeD4Aa57e656b"], // array of addresses that can mint NFTs from collection on Nume
+  firstTokenId: "0", // first token id mint of the collection on Nume
+  lastTokenId: "100", // last token id mint of the collection on Nume
   baseUri:
     "https://ipfs.io/ipfs/QmVLbfDpBj9XxXCCgWwhshpAQE9X23skZ8SfpUPn29HhnQ", // base uri of the collection (will be used for metadata of NFTs)
+  mintFees: "1000000000000000000", // mint fee applied for every NFT mint in the collection (goes to the creator / collection owner)
+  mintFeesToken: "0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80", // address of the minting fee token
+  royaltyFeesPercetage: "0", // percentage of royalty on secondary sales (goes to the creator / collection owner)
   signature,
 };
 
@@ -152,17 +198,28 @@ Make an API request to mint an NFT (Non-Fungible Token) using the Numecrypto API
 
 ```js
 const url = "https://api.numecrypto.com/v2/mint-nft";
-const personalSignMintNft = async (user, nftContractAddress, privateKey) => {
-  const provider = ethers.getDefaultProvider('mainnet')
-  const wallet = new ethers.Wallet(privateKey, provider)
+const personalSignMintNft = async (
+  user,
+  nftContractAddress,
+  mintFee,
+  mintFeeCurrency,
+  numeFee,
+  nonce,
+  privateKey
+) => {
+  const provider = ethers.getDefaultProvider("mainnet");
+  const wallet = new ethers.Wallet(privateKey, provider);
   try {
-    const hash = ethers.utils.solidityKeccak256(['address', 'address'], [nftContractAddress, user])
-    const signature = await wallet.signMessage(hash.slice(2))
-    return signature
+    const hash = ethers.utils.solidityKeccak256(
+      ["uint256", "address", "address", "uint256", "address", "uint256"],
+      [nonce, nftContractAddress, user, mintFee, mintFeeCurrency, numeFee]
+    );
+    const signature = await wallet.signMessage(hash.slice(2));
+    return signature;
   } catch (error) {
-    console.error('Error:', error)
+    console.error("Error:", error);
   }
-}
+};
 function callAPI(url, apiKey, data) {
   return fetch(url, {
     method: "POST",
@@ -179,15 +236,20 @@ function callAPI(url, apiKey, data) {
     .catch((error) => console.error("API error:", error));
 }
 const signature = await personalSignMintNft(
-  "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
+  "0x1daFCD50E221CFB70B5Be871f5E4556B9AD43Dcd",
   "0x6D9E72D1336e3592F5E4844B9e18E484fC4cf344",
+  "1000000000000000000",
+  "0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80",
+  "100000000000000000",
+  2,
   0,
-  PRIVATE_KEY,
-)
+  PRIVATE_KEY
+);
 const data = {
   contractAddress: "0x6D9E72D1336e3592F5E4844B9e18E484fC4cf344", // contract address of the NFT collection
-  MintUser: "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a", // recipient address to which the NFT to be minted
-  signature
+  MintUser: "0x1daFCD50E221CFB70B5Be871f5E4556B9AD43Dcd", // recipient address to which the NFT to be minted
+  nonce: 2, // nonce of the user
+  signature,
 };
 
 callAPI(url, apiKey, data)
@@ -206,8 +268,8 @@ Status code 200 will be returned for successful minting of NFT and a message obj
 {
   "message": {
     "ContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
-    "MintUser": "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
-    "NftTokenId": 19
+    "MintUser": "0x1dafcd50e221cfb70b5be871f5e4556b9ad43dcd",
+    "NftTokenId": "1"
   },
   "statusCode": 200
 }

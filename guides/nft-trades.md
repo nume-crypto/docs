@@ -1,11 +1,11 @@
 # NFT trades
 
-
-## List NFT 
+## List NFT
 
 Endpoint : `POST /marketplace/list-nft`
 
 **Request**
+
 ```sh
 curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/list-nft' \
 --header 'Content-Type: application/json' \
@@ -22,43 +22,44 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/list-nft' \
 
 **Parameters:**
 
-| Name          | Type        | Description                                 |
-|---------------|-------------|---------------------------------------------|
-| user          | string      | Address for the listing user |
-| nftContractAddress | string | Address of the NFT contract |
-| nftTokenId | string | Token ID of the NFT |
-| currency | string | Chosen currency for NFT sale |
-| amount | string | Price for the NFT in token value |
-| nonce | number | Nonce of the listing user |
-| signature | string | Signature of the above parameters |
+| Name               | Type   | Description                       |
+| ------------------ | ------ | --------------------------------- |
+| user               | string | Address for the listing user      |
+| nftContractAddress | string | Address of the NFT contract       |
+| nftTokenId         | string | Token ID of the NFT               |
+| currency           | string | Chosen currency for NFT sale      |
+| amount             | string | Price for the NFT in token value  |
+| nonce              | number | Lister Nonce of the user          |
+| signature          | string | Signature of the above parameters |
 
 **Example response:**
 
 ```json
 {
-    "message": {
-        "Nfts": [
-            {
-                "OrderId": "c0ab9ec2-8d33-41e6-bb37-5b88435d3479",
-                "FromUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
-                "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
-                "Amount": "2",
-                "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
-                "NftTokenId": "18"
-            }
-        ]
-    },
-    "statusCode": 200
+  "message": {
+    "Nfts": [
+      {
+        "OrderId": "c0ab9ec2-8d33-41e6-bb37-5b88435d3479",
+        "FromUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
+        "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
+        "Amount": "2",
+        "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+        "NftTokenId": "18"
+      }
+    ]
+  },
+  "statusCode": 200
 }
 ```
 
--------------------------------------------------------------------------------------------------------
+---
 
 ## Buy NFT
 
 Endpoint : `POST /marketplace/buy-nft`
 
 **Request**
+
 ```sh
 curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/buy-nft' \
 --header 'Content-Type: application/json' \
@@ -75,31 +76,33 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/buy-nft' \
 
 **Parameters:**
 
-| Name          | Type        | Description                                 |
-|---------------|-------------|---------------------------------------------|
-| user          | string      | Address for the listing user |
-| nftContractAddress | string | Address of the NFT contract |
-| nftTokenId | string | Token ID of the NFT |
-| currency | string | Chosen currency for NFT sale |
-| amount | string | Price for the NFT in token value |
-| nonce | number | Nonce of the listing user |
-| signature | string | Signature of the above parameters |
+| Name               | Type   | Description                       |
+| ------------------ | ------ | --------------------------------- |
+| user               | string | Address for the listing user      |
+| nftContractAddress | string | Address of the NFT contract       |
+| nftTokenId         | string | Token ID of the NFT               |
+| currency           | string | Chosen currency for NFT sale      |
+| amount             | string | Price for the NFT in token value  |
+| nonce              | number | Nonce of the user                 |
+| signature          | string | Signature of the above parameters |
 
 **Example response:**
 
 ```json
 {
-    "message": "success",
-    "statusCode": 200
+  "message": "success",
+  "statusCode": 200
 }
 ```
 
--------------------------------------------------------------------------------------------------------
+---
+
 ## Unlist NFT
 
 Endpoint : `POST /marketplace/unlist-nft`
 
 **Request**
+
 ```sh
 curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/unlist-nft' \
 --header 'Content-Type: application/json' \
@@ -112,78 +115,79 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/unlist-nft' 
 
 **Parameters:**
 
-| Name          | Type        | Description                                 |
-|---------------|-------------|---------------------------------------------|
-| user          | string      | Address for the listing user |
-| orderId | string | Listing order ID |
-| signature | string | Signature of the order ID |
+| Name      | Type   | Description                  |
+| --------- | ------ | ---------------------------- |
+| user      | string | Address for the listing user |
+| orderId   | string | Listing order ID             |
+| signature | string | Signature of the order ID    |
 
 **Example response:**
 
 ```json
 {
-    "message": "success",
-    "statusCode": 200
+  "message": "success",
+  "statusCode": 200
 }
 ```
 
--------------------------------------------------------------------------------------------------------
+---
 
 ## Get NFT transaction history
 
 Endpoint : `GET /marketplace/transaction-history/:contractAddress/:tokenId`
 
 **Request**
+
 ```sh
 curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/transaction-history/0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344/18'
 ```
 
 **Parameters:**
 
-| Name          | Type        | Description                                 |
-|---------------|-------------|---------------------------------------------|
+| Name            | Type   | Description                 |
+| --------------- | ------ | --------------------------- |
 | contractAddress | string | Address of the NFT contract |
-| tokenId | string | Token ID of the NFT |
+| tokenId         | string | Token ID of the NFT         |
 
 **Example response:**
 
 ```json
 {
-    "message": {
-        "MintData": {
-            "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
-            "NftTokenId": "18",
-            "TokenUri": "https://ipfs.io/ipfs/QmZcH4YvBVVRJtdn4RdbaqgspFU8gH6P9vomDpBVpAL3u4/18",
-            "MintedBy": "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
-            "MintedAt": "2023-05-09T17:05:20.018447+05:30"
-        },
-        "Transactions": [
-            {
-                "OrderId": "0c27ecb1-0551-461c-87ae-e38506bec225",
-                "FromUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
-                "ToUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
-                "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
-                "ListAmount": "2",
-                "BuyAmount": "2",
-                "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
-                "NftTokenId": "18",
-                "CreatedAt": "2023-05-16T11:30:44.449332+05:30"
-            },
-            {
-                "OrderId": "95f0df4a-d5b6-4ee1-aaf4-f4ad3ba2cf4c",
-                "FromUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
-                "ToUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
-                "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
-                "ListAmount": "2",
-                "BuyAmount": "2",
-                "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
-                "NftTokenId": "18",
-                "CreatedAt": "2023-05-15T19:40:10.428619+05:30"
-            }
-        ]
+  "message": {
+    "MintData": {
+      "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+      "NftTokenId": "18",
+      "TokenUri": "https://ipfs.io/ipfs/QmZcH4YvBVVRJtdn4RdbaqgspFU8gH6P9vomDpBVpAL3u4/18",
+      "MintedBy": "0x46714661eecb6f07065dcb4bf3d9b772dcefa63a",
+      "MintedAt": "2023-05-09T17:05:20.018447+05:30"
     },
-    "statusCode": 200
+    "Transactions": [
+      {
+        "OrderId": "0c27ecb1-0551-461c-87ae-e38506bec225",
+        "FromUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
+        "ToUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
+        "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
+        "ListAmount": "2",
+        "BuyAmount": "2",
+        "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+        "NftTokenId": "18",
+        "CreatedAt": "2023-05-16T11:30:44.449332+05:30"
+      },
+      {
+        "OrderId": "95f0df4a-d5b6-4ee1-aaf4-f4ad3ba2cf4c",
+        "FromUser": "0x1b34b2f706cda183e4818d2ceaf58253ccab3428",
+        "ToUser": "0xccff350ef46b85228d6650a802107e58bf6a32ab",
+        "Currency": "0x0b6D9aB4c80889b65A61050470CBC5523d8Ce48D",
+        "ListAmount": "2",
+        "BuyAmount": "2",
+        "NftContractAddress": "0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344",
+        "NftTokenId": "18",
+        "CreatedAt": "2023-05-15T19:40:10.428619+05:30"
+      }
+    ]
+  },
+  "statusCode": 200
 }
 ```
 
--------------------------------------------------------------------------------------------------------
+---
