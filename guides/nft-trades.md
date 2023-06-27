@@ -32,6 +32,8 @@ curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/list-nft' \
 | nonce              | number | Lister Nonce of the user          |
 | signature          | string | Signature of the above parameters |
 
+> Lister nonce is different from nonce that we use generally in other calls. This is specifically created to be use during NFT listings. The reason for going ahead with this approach is to facilitate NFT sales. To keep it simple when a user lists an NFT, it will be signed by the user which includes nonce, and if the user does some other transactions on Nume thereby increasing the nonce, will make the nonce that was signed during listing invalid. To avaoid this we are having a seperate nonce to track NFT listings.
+
 **Example response:**
 
 ```json
