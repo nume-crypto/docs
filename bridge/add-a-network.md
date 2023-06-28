@@ -8,10 +8,10 @@ To start using the Nume bridge, you need to add the desired chain's RPC endpoint
 ![Add network form](../images/bridge/mm-add-network-form.png)
 
 **Nume Polygon testnet** :
-- Network Name: Nume testnet
+- Network Name: Nume Testnet
 - New RPC URL: https://rpc.numecrypto.com
 - Chain ID: 710
-- Currency Symbol: DAI
+- Currency Symbol: NDAI
 - Block Explorer URL: https://dev.explorer.numecrypto.com
 
 <!-- **Nume Polygon testnet tokens** :
