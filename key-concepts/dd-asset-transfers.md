@@ -11,18 +11,6 @@ ERC20 tokens are fungible tokens, meaning that each token is identical and inter
 
 ERC721 tokens are non-fungible tokens, meaning that each token is unique and not interchangeable with any other token. They are commonly used for digital assets such as collectibles, game items, and real estate.
 
-# ERC20 tokens currently supported on Nume
-
-- MATIC
-- ETH
-- WBTC
-- USDC
-- USDT
-- DAI
-
-These supported tokens will be expanded upon request.
-Asset transfers refer to the process of transferring ownership of digital assets from one address to another. Asset transfers can occur for a variety of reasons, such as buying or selling assets, gifting them to others, or moving them to a different address. When someone wants to transfer an asset, they initiate a transaction on Nume. The transaction typically includes information about the asset being transferred, such as its name, type(ERC20 or ERC721), and quantity, as well as the addresses of the sender and recipient.
-
 # ERC20 token transfer
 
 ```js
@@ -46,3 +34,15 @@ const tx = {
 const signedTx = await wallet.signTransaction(tx)
 ```
 ?>  Use the signedTx for making the transfer [API call](../guides/asset-transfer.md)
+
+# ERC20 tokens currently supported on Nume
+
+- MATIC
+- ETH
+- WBTC
+- USDC
+- USDT
+- DAI
+
+These supported tokens will be expanded upon request.
+Asset transfers refer to the process of transferring ownership of digital assets from one address to another. Asset transfers can occur for a variety of reasons, such as buying or selling assets, gifting them to others, or moving them to a different address. When someone wants to transfer an asset, they initiate a transaction on Nume. The transaction typically includes information about the asset being transferred, such as its name, type(ERC20 or ERC721), and quantity, as well as the addresses of the sender and recipient.

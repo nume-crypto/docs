@@ -1,19 +1,19 @@
-# 👷 I want to start building
+# 👷 Getting started
 
-We offer REST APIs for other developers to build on top of Nume. Plans on SDK and other tools are in the works.
+We currently offer REST APIs to build on top of Nume. We are currently developing SDKs and APIs for a better developer experience on Nume.
 
 ## Get started with nume
 
-- Bridge funds using the [Nume Bridge](bridge.md)
-- Transfer assests instantly and gas free using [Nume protocol](guides/token-transfer.md)
+- Bridge funds using the [Nume Bridge](bridge.md).
+- Transfer assests instantly and gas free using [Nume protocol](guides/token-transfer.md).
 
 ## Launch an NFT collection
 
-- Get your hands dirty quickly with our [NFT minting tutorial](guides/nft-minting.md)
+- Get started with our [NFT minting tutorial](guides/nft-minting.md).
 
-### Not sure what Nume can do for you?
+### Understanding the Nume Protocol
 
-- Learn about [what nume is](nume/what-is-it.md)
-- Find out [what you can build on it](nume/what-can-you-build-on-it.md)
-- Level up your understanding with these [key development concepts](nume/what-are-its-solutions.md)
+- What is [Nume?](nume/what-is-it.md)
+- Find out [what you can build on it](nume/what-is-it?id=building-with-nume).
+- Fundamentals of Nume Protocol [key development concepts](/key-concepts).
 
