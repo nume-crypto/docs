@@ -6,13 +6,13 @@
 > - What are trustless withdrawals?
 > - What is a mass exit scenario?
 
-?> The Nume Protocol will launch as a Layer-3 on Polygon zkEVM. However until support for necessary precompiles is introduced, we will operate on the Polygon PoS chain starting Q3 2023.
+?> The Nume Protocol will launch as a Layer-3 on Polygon zkEVM. However until support for necessary precompiles is introduced, we will operate on the Polygon zkEVM chain starting Q3 2023.
 
-Users can transfer assets between Nume and Polygon PoS, depending on the desired transaction layer. This enables them to benefit from lower transaction fees on Nume for actions like buying or selling NFTs, with the flexibility to withdraw to Polygon PoS when transacting on that layer.
+Users can transfer assets between Nume and Polygon zkEVM, depending on the desired transaction layer. This enables them to benefit from lower transaction fees on Nume for actions like buying or selling NFTs, with the flexibility to withdraw to Polygon zkEVM when transacting on that layer.
 
 ### Terminology
-- **Deposits** - Deposits involve transferring assets from Nume to Polygon PoS (adding funds to Nume).
-- **Withdrawal** - Withdrawals involve transferring assets from Nume to Polygon PoS (withdrawing from Nume).
+- **Deposits** - Deposits involve transferring assets from Nume to Polygon zkEVM (adding funds to Nume).
+- **Withdrawal** - Withdrawals involve transferring assets from Nume to Polygon zkEVM (withdrawing from Nume).
 - **Bridging** - Bridging refers to transferring assets between different layers.
 
 ### ABI (Application Binary Interface)
@@ -22,7 +22,7 @@ Users can transfer assets between Nume and Polygon PoS, depending on the desired
 # Deposits
 
 Here's what happens under the hood when a deposit is made on Nume:
-- User transfers the Token from Polygon PoS to the Nume contract on Polygon PoS
+- User transfers the Token from Polygon zkEVM to the Nume contract on Polygon zkEVM
 - The transfer function emits an event which is read by Nume's server and an asset identifier is created that represents the asset, so that it can be utilized and transacted with on nume.
 
 Sample code for depositing ERC20
@@ -52,14 +52,14 @@ There are 2 kinds of withdrawal supported by nume
 
 Here's what happens under the hood when a **trusted withdrawal** is made on Nume:
 - User creates a withdrawal request on nume which will be processed in the next settlement 
-- When the new settlement root is signed off all the withdrawal requests will be processed and the user will receive the asset on Polygon PoS
+- When the new settlement root is signed off all the withdrawal requests will be processed and the user will receive the asset on Polygon zkEVM
 
 Guidelines for submitting a [trusted withdrawal request](./guides/token-transfer?id=create-transaction)
 
 Here's what happens under the hood when a **trustless withdrawal** is made on Nume:
-- User submits a withdrawal request to the Polygon PoS nume contract directly by providing his proof of ownership of the asset on Nume and 0.005 MATIC as stake.
+- User submits a withdrawal request to the Polygon zkEVM nume contract directly by providing his proof of ownership of the asset on Nume and 0.005 MATIC as stake.
 - The nume contract verifies the proof and processes the withdrawal request. If the proof is invalid the withdrawal request is rejected.
-- When the new settlement root is signed off all the withdrawal requests will be processed and the user will receive the asset on Polygon PoS and the stake amount will be returned to the user.
+- When the new settlement root is signed off all the withdrawal requests will be processed and the user will receive the asset on Polygon zkEVM and the stake amount will be returned to the user.
 
 Sample code for submitting a trustless withdrawal request
 ```js
@@ -99,7 +99,7 @@ await web3.eth.sendSignedTransaction(signedTx.rawTransaction)
 ```
 
 
-?> Multiple withdrawals from Nume will be combined into one Polygon PoS transaction due to the way the bridge contract works.
+?> Multiple withdrawals from Nume will be combined into one Polygon zkEVM transaction due to the way the bridge contract works.
 
 # Mass exit scenario
-During a mass exit scenario, users can efficiently withdraw their assets from Nume to Polygon PoS. Users can submit a withdrawal request directly to the Polygon PoS Nume contract, which verifies the proof and processes the withdrawal. If the proof is invalid, the withdrawal request is rejected.
+During a mass exit scenario, users can efficiently withdraw their assets from Nume to Polygon zkEVM. Users can submit a withdrawal request directly to the Polygon zkEVM Nume contract, which verifies the proof and processes the withdrawal. If the proof is invalid, the withdrawal request is rejected.

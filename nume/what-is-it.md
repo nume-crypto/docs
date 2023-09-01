@@ -1,22 +1,22 @@
 # What is it?
 
-Nume is a gas abstracted, scalable and secure web3 payments protocol with primitives tailored for commerce. Nume chose to build on zkEVM because it is the most scalable EVM-compatible infrastructure platform on Ethereum. The Nume Protocol will launch as a Layer-3 on Polygon zkEVM. However until support for necessary precompiles is introduced, we will operate on the Polygon PoS chain starting Q3 2023.
+Nume is a gas abstracted, scalable and secure web3 payments protocol with primitives tailored for commerce. Nume chose to build on zkEVM because it is the most scalable EVM-compatible infrastructure platform on Ethereum. The Nume Protocol will launch as a Layer-3 on Polygon zkEVM. However until support for necessary precompiles is introduced, we will operate on the Polygon zkEVM chain starting Q3 2023.
 
 Nume is a platform that provides:
 
-- low-cost scaling solution for crypto asset transfers deployed as a Layer 3 on Polygon PoS which settles on the most secure and decentralized layer 1 - Ethereum
+- low-cost scaling solution for crypto asset transfers deployed as a Layer 3 on Polygon zkEVM which settles on the most secure and decentralized layer 1 - Ethereum
 - APIs and developer tools aimed at making the development of web3 commerce applications hassle-free
 
 ## Designed on First Principles
 
 Nume is a high-scale trustless asset transfer protocol. With Optimistic rollups(ORs), transactions are inexpensive but settlements have delayed finality due to its fraud proof mechanism. Zk-rollups have instant settlement finality but are expensive due to off-chain computation resources (required for the zk proof generation) and on-chain data commitment (required to guarantee data availability).
 
-Nume provides the same security guarantees as OR/ZK systems as a validity proof system that is neither zk-based nor commits data on-chain. Hence Nume’s costs are much lower than theirs, affording for monetization strategies that is entirely gas-abstracted. Note, however, that the Nume protocol is not EVM/smart-contract compatible. We are deployed as a Layer 3 on Polygon PoS which allows us to tap into the network efforts of a scalable robust EVM-compatible platform while driving the cost down for asset transfers even further.
+Nume provides the same security guarantees as OR/ZK systems as a validity proof system that is neither zk-based nor commits data on-chain. Hence Nume’s costs are much lower than theirs, affording for monetization strategies that is entirely gas-abstracted. Note, however, that the Nume protocol is not EVM/smart-contract compatible. We are deployed as a Layer 3 on Polygon zkEVM which allows us to tap into the network efforts of a scalable robust EVM-compatible platform while driving the cost down for asset transfers even further.
 
 Key features of the Nume protocol::
 
 1. **Trustless Security**
-   - Nume does not make any trust assumptions on top of Polygon PoS. If you trust Polygon PoS, you can trust Nume.
+   - Nume does not make any trust assumptions on top of Polygon zkEVM. If you trust Polygon zkEVM, you can trust Nume.
 2. **Data Availability**
    - Every user is revealed sufficient information about each settlement to be able to withdraw their funds trustlessly and directly from the contract at any time.
 3. **Non-custodial**
