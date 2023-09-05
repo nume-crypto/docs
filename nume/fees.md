@@ -10,6 +10,7 @@ Fees are additional amounts that a user pays to the network for the use of the n
 | Action       | Description   | Fees (per transaction)    |
 |---------------|-------------|-------------|
 | Token sends     | Sending supported token on the Nume network: DAI, USDC, USDT, WBTC, MATIC, ETH     | 0.05 DAI      |
+| Token Withdraw     | Withdraw supported token From the Nume network: DAI, USDC, USDT, WBTC, MATIC, ETH     | 0.10 DAI      |
 | NFT sends         | One-directional NFT send - nothing is received in return                   | 0.05 DAI      |
 | NFT mints          | Minting an NFT                   | 0.10 DAI      |
 | NFT trades            | NFT is sent, payment (ERC-20) is received                  | 0.30 DAI    |
