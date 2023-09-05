@@ -1,5 +1,5 @@
 # Deposit from zkEVM to Nume
-To move your tokens to Nume chain, visit [bridge.numecrypto.com](https://bridge.numecrypto.com) Login to the bridge with your wallet and make sure you are connected to the Polygon mainnet network.
+To move your tokens to Nume chain, visit [bridge.numecrypto.com](https://bridge.numecrypto.com) Login to the bridge with your wallet and make sure you are connected to the Polygon zkEVM network.
 
 ![Add network](../images/bridge/bridge.png)
 
