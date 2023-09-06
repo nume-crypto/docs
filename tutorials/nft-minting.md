@@ -16,13 +16,6 @@ Currently token id of NFT is handled by Nume, so following this format will make
 
 If you are familiar to NFT contract development, feel free to create your own contract and deploy using any tool/framework.
 
-<!-- To keep things simple for this tutorial we will create a NFT contract with minimal functions and use remix to deploy it on polygon mumbai. -->
-
-<!-- - remix - it is a browser based smart contract developemnt environment
-- polygon mumbai - we will deploy the contract on mumbai testnet, get some test matic from any faucet to deploy the collection and mint some NFTs
-
-> Checkout the complete code [here](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC45OwoKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0c0A0LjguMy90b2tlbi9FUkM3MjEvRVJDNzIxLnNvbCI7CmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHNANC44LjMvYWNjZXNzL093bmFibGUuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0c0A0LjguMy91dGlscy9Db3VudGVycy5zb2wiOwoKY29udHJhY3QgTXlUb2tlbiBpcyBFUkM3MjEsIE93bmFibGUgewogICAgdXNpbmcgQ291bnRlcnMgZm9yIENvdW50ZXJzLkNvdW50ZXI7CgogICAgQ291bnRlcnMuQ291bnRlciBwcml2YXRlIF90b2tlbklkQ291bnRlcjsKCiAgICBjb25zdHJ1Y3RvcigpIEVSQzcyMSgiTXlUb2tlbiIsICJNVEsiKSB7fQoKICAgIGZ1bmN0aW9uIF9iYXNlVVJJKCkgaW50ZXJuYWwgcHVyZSBvdmVycmlkZSByZXR1cm5zIChzdHJpbmcgbWVtb3J5KSB7CiAgICAgICAgcmV0dXJuICJodHRwczovL2lwZnMuaW8vaXBmcy9RbVpjSDRZdkJWVlJKdGRuNFJkYmFxZ3NwRlU4Z0g2UDl2b21EcEJWcEFMM3U0IjsKICAgIH0KCiAgICBmdW5jdGlvbiBzYWZlTWludChhZGRyZXNzIHRvKSBwdWJsaWMgb25seU93bmVyIHsKICAgICAgICB1aW50MjU2IHRva2VuSWQgPSBfdG9rZW5JZENvdW50ZXIuY3VycmVudCgpOwogICAgICAgIF90b2tlbklkQ291bnRlci5pbmNyZW1lbnQoKTsKICAgICAgICBfc2FmZU1pbnQodG8sIHRva2VuSWQpOwogICAgfQp9Cg&lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.18+commit.87f61d96.js) -->
-
 ```sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
@@ -49,20 +42,6 @@ contract NumeNFT is ERC721, Ownable {
     }
 }
 ```
-
-<!-- Connect metmask on remix
-
-![Remix Injected Metamask Connection](../images/nft/remix-injected.png)
-
-Click on deploy to initiate contract creation transaction
-
-![Remix Injected Metamask Deployment](../images/nft/remix-deploy.png)
-
-Put the recipient address of the NFT and click on transact button of safeMint to mint the NFT
-
-![Remix Injected Metamask Minting](../images/nft/remix-mint.png)
-
-You can verify all these transactions using polygonscan. -->
 
 - Create a new folder for this project
 

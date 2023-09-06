@@ -26,12 +26,6 @@ Key features of the Nume protocol::
 5. **Decentralized Governance** (COMING SOON)
    - The protocol is governed by validators. Any changes to the Nume off chain state verification algorithm requires validators’ signature.
 
-<!-- ## Benefits of building on layer 2 vs. layer 1
-- **No gas fees** Transactions on layer 2 are free. This means that users can interact with your application without having to pay gas fees.
-- **Limitless Scalability** Our protocol is built to support massive scale. If existing rails have not met your scaling needs, look no further.
-- **Instant Confirmation** No blockchain delays, payments are confirmed instantly on Nume. Close the loop for your customers.
-- **Fast Liquidity** Transactions are settled every thirty minutes on ethereum and can be withdrawn anytime after. Access your liquidity soon after a payment is made.
-- **Micropayments** Nume high scale and gas-agnostic monetization model enables you to accept one-off or streaming micropayments with a few lines of code today. -->
 
 ## EVM addressability
 

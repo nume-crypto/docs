@@ -20,12 +20,13 @@
     .sidebar {
       width: 330px
     }
+
     /* .sidebar ul li.active>a {
       border-right: none;
     } */
     body.close .sidebar {
-        transform: translateX(-330px);
-      }
+      transform: translateX(-330px);
+    }
 
     @media screen and (max-width: 768px) {
       .sidebar {
@@ -44,6 +45,7 @@
         width: auto !important;
         padding-right: 0px !important;
       }
+
       body.close .sidebar {
         transform: translateX(330px);
       }
@@ -58,7 +60,21 @@
       name: '',
       repo: '',
       loadSidebar: true,
+      plugins: [
+        function globalVariableReplacer(hook, vm) {
+          hook.beforeEach(function (content) {
+            for (var key in window.globalVariables) {
+              const regexPattern = new RegExp(`{{\\s*${key}\\s*}}`, "g");
+              content = content.replace(regexPattern, window.globalVariables[key]);
+            }
+            return content;
+          });
+        },
+      ],
     }
+    window.globalVariables = {
+      apiUrl: "https://zkevm-testnet.protocol.numecrypto.com/v2/"
+    };
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>

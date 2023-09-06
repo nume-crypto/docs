@@ -6,7 +6,7 @@ Endpoint : `POST /indexer/v1/nume/address/:address`
 
 **Request**
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/address/0x46714661eECB6F07065DCb4BF3D9b772dcefa63a/assets'
+curl --location '{{apiUrl}}indexer/v1/nume/address/0x46714661eECB6F07065DCb4BF3D9b772dcefa63a/assets'
 ```
 
 **Parameters:**
@@ -29,7 +29,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/address/
         "balance": "8900000000000000000",
         "quote": 8.898919324006927,
         "quote_rate": 0.9998785757311154,
-        "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
+        "logo_url": "{{apiUrl}}assets/images/dai.svg",
         "quote_rate_24h": -0.00008935522267550233,
         "quote_pct_change_24h": -0.0003895167635670216,
         "verified": true,
@@ -45,7 +45,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/address/
         "balance": "3905263157894737",
         "quote": 6.816630930323962,
         "quote_rate": 1745.4984862015535,
-        "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/eth.svg",
+        "logo_url": "{{apiUrl}}assets/images/eth.svg",
         "quote_rate_24h": -30.04422726003645,
         "quote_pct_change_24h": 1684.3922056173801,
         "verified": true,
@@ -62,7 +62,7 @@ Endpoint : `POST /indexer/v2/nume/address/:address?pageSize=10&offset=0`
 
 **Request**
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v2/nume/address/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a/assets?pageSize=1&offset=0'
+curl --location '{{apiUrl}}indexer/v2/nume/address/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a/assets?pageSize=1&offset=0'
 ```
 
 **Parameters:**
@@ -90,7 +90,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v2/nume/address/
             "balance": "8900000000000000000",
             "quote": 0,
             "quote_rate": 0,
-            "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
+            "logo_url": "{{apiUrl}}assets/images/dai.svg",
             "quote_rate_24h": -0.00008935522267550233,
             "quote_pct_change_24h": -0.0003895167635670216,
             "verified": true,
@@ -106,7 +106,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v2/nume/address/
             "balance": "3905263157894737",
             "quote": 0,
             "quote_rate": 0,
-            "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/eth.svg",
+            "logo_url": "{{apiUrl}}assets/images/eth.svg",
             "quote_rate_24h": -30.04422726003645,
             "quote_pct_change_24h": 1684.3922056173801,
             "verified": true,
@@ -124,7 +124,7 @@ Endpoint : `POST /indexer/v3/nume/address/:address?page=0&pageSize=5`
 
 **Request**
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v3/nume/address/0xa9b39cb5ebf5deb0818561e8bc64092fbde34613/transactions?page=0&pageSize=5'
+curl --location '{{apiUrl}}indexer/v3/nume/address/0xa9b39cb5ebf5deb0818561e8bc64092fbde34613/transactions?page=0&pageSize=5'
 ```
 
 **Parameters:**
@@ -168,7 +168,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v3/nume/address/
                     "token_id": "0xE9573B8A0AF951431bcBD194E8cc3AeE654Cd723",
                     "decimals": 6,
                     "value": "270000",
-                    "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/usdc.svg",
+                    "logo_url": "{{apiUrl}}assets/images/usdc.svg",
                     "from": "0x995227bd4dbfcd247fd7c97edba86c4ad46bfb05",
                     "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
                     "quote": 0.26993889955640804,
@@ -203,7 +203,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v3/nume/address/
                     "token_id": "0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80",
                     "decimals": 18,
                     "value": "660000000000000000",
-                    "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
+                    "logo_url": "{{apiUrl}}assets/images/dai.svg",
                     "from": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
                     "to": "0xdc42d1dd82217013b79eba43673912c4a3fc7bea",
                     "quote": 0.6598019110886044,
@@ -236,7 +236,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v3/nume/address/
                     "token_id": "0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80",
                     "decimals": 18,
                     "value": "280000000000000032",
-                    "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/dai.svg",
+                    "logo_url": "{{apiUrl}}assets/images/dai.svg",
                     "from": "0x11c830b25a15e39006094377fdc409c11c002b48",
                     "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
                     "quote": 0.27991596228001403,
@@ -258,7 +258,7 @@ Endpoint : `POST /indexer/v1/nume/transactions/:transactionHash`
 
 **Request**
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/transactions/0x1f31ac40e30c1b2d893185bd3df74a0617754d05ba754e81679dcc0ca11ed582'
+curl --location '{{apiUrl}}indexer/v1/nume/transactions/0x1f31ac40e30c1b2d893185bd3df74a0617754d05ba754e81679dcc0ca11ed582'
 ```
 
 **Parameters:**
@@ -294,7 +294,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/indexer/v1/nume/transact
             "token_id": "0xE9573B8A0AF951431bcBD194E8cc3AeE654Cd723",
             "decimals": 6,
             "value": "270000",
-            "logo_url": "https://api.protocol.numecrypto.com/v2/assets/images/usdc.svg",
+            "logo_url": "{{apiUrl}}assets/images/usdc.svg",
             "from": "0x995227bd4dbfcd247fd7c97edba86c4ad46bfb05",
             "to": "0xa9b39cb5ebf5deb0818561e8bc64092fbde34613",
             "quote": 0.26993889955640804,

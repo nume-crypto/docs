@@ -14,7 +14,7 @@
 **Request**
 
 ```sh
-curl --location 'https://api.numecrypto.com/v2/create-nft-collection' \
+curl --location '{{apiUrl}}create-nft-collection' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "NFT Collection",
@@ -67,7 +67,7 @@ Allows minting of NFT to an address on Nume.
 **Request**
 
 ```sh
-curl --location 'https://api.numecrypto.com/v2/mint-nft' \
+curl --location '{{apiUrl}}mint-nft' \
 --header 'Content-Type: application/json' \
 --data '{
     "contractAddress": "0x6D9E72D1336e3592F5E4844B9e18E484fC4cf344",

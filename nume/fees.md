@@ -17,7 +17,7 @@ Fees are additional amounts that a user pays to the network for the use of the n
 |Creator fee on trades    | NFT creators can set a fixed or percentage royalty fee on their collections. This fee is collected whenever their NFTs are traded. However, it's important to note that royalties cannot be collected when NFTs are sent to others.                    | % (set by creator) - Not capped by the protocol |
 |Creator fee on mints         | NFT collection creators can set a fixed fee to be collected when their NFTs are minted.               | fixed fee (set by creator) - Not capped by the protocol |
 
-<!-- <div style="background-color: yellow; padding: 10px;">
-During asset transfers using MetaMask, you may notice a slight discrepancy in the estimated gas cost. However, the network will only charge 0.05 DAI.
-</div> -->
+# Subscriptions
+Introducing our cutting-edge trustless subscription feature, a groundbreaking addition to our protocol! With trustless subscriptions, users can conduct an unlimited number of operations without being burdened by protocol fees. Here's how it works: for every 30 settlements, users pay just 1 DAI, granting them unrestricted access to the platform. This means you can transact and operate without any limitations.
 
+When you subscribe, you will start enjoying the benefits of your subscription with the next scheduled settlement. The subscription fee will be automatically deducted from your account balance, ensuring uninterrupted access to the subscription services, as long as you have a sufficient balance and do not choose to cancel the subscription. You also have the option to cancel your subscription at any time by initiating a direct call to the contract

@@ -16,8 +16,8 @@ ERC721 tokens are non-fungible tokens, meaning that each token is unique and not
 ```js
 const tx = {
   to: web3.utils.toHex(ERC20_CONTRACT_ADDRESS),
-  gasLimit: web3.utils.toHex(0),
-  maxFeePerGas: web3.utils.toHex(web3.utils.toWei('0', 'gwei')),
+  gasLimit: web3.utils.toHex(50000),
+  maxFeePerGas: web3.utils.toHex(web3.utils.toWei('2000', 'gwei')),
   maxPriorityFeePerGas: web3.utils.toHex(web3.utils.toWei('0', 'gwei')),
   value: web3.utils.toHex(web3.utils.toWei('0', 'ether')),
   nonce: web3.utils.toHex(USER_NONCE + 1),
@@ -35,7 +35,7 @@ const signedTx = await wallet.signTransaction(tx)
 ```
 ?>  Use the signedTx for making the transfer [API call](../guides/asset-transfer.md)
 
-# ERC20 tokens currently supported on Nume
+# Tokens currently supported on Nume
 
 - MATIC
 - ETH

@@ -6,7 +6,7 @@
 > - What are trustless withdrawals?
 > - What is a mass exit scenario?
 
-?> The Nume Protocol will launch as a Layer-3 on Polygon zkEVM. However until support for necessary precompiles is introduced, we will operate on the Polygon zkEVM chain starting Q3 2023.
+?> The Nume Protocol will launch as a Layer-3 on Polygon zkEVM.
 
 Users can transfer assets between Nume and Polygon zkEVM, depending on the desired transaction layer. This enables them to benefit from lower transaction fees on Nume for actions like buying or selling NFTs, with the flexibility to withdraw to Polygon zkEVM when transacting on that layer.
 
@@ -71,7 +71,35 @@ const sign = async (message, secret) => {
     return signature
 }
 
-let message = USER_ADDRESS + BLOCK_NUMBER.toString(16).padStart(64, '0')
+const getOptimizedNonce = (usedListerNonce) => {
+    let optimizedUsedListerNonce = []
+    usedListerNonce.sort((a, b) => a - b)
+    let lastOptimizedNonce = 0
+
+    for (let i = 0; i < usedListerNonce.length; i++) {
+    let nonce = usedListerNonce[i]
+    if (i + 1 === nonce) {
+        lastOptimizedNonce = nonce
+        continue
+    } else {
+        if (lastOptimizedNonce !== 0) {
+        optimizedUsedListerNonce.unshift(0)
+        optimizedUsedListerNonce.push(lastOptimizedNonce)
+        lastOptimizedNonce = 0
+        }
+        optimizedUsedListerNonce.push(nonce)
+    }
+    }
+
+    if (lastOptimizedNonce !== 0) {
+    optimizedUsedListerNonce.unshift(0)
+    optimizedUsedListerNonce.push(lastOptimizedNonce)
+    lastOptimizedNonce = 0
+    }
+    return optimizedUsedListerNonce
+}
+
+let message = USER_ADDRESS.slice(2) + BLOCK_NUMBER.toString(16).padStart(64, '0')
 let signature = await sign( message, USER_PRIVATE_KEY)
 const args = {
     user: USER_ADDRESS,
@@ -83,7 +111,10 @@ const args = {
     balancesRoot: BALANCES_ROOT,
     balancesProof: BALANCES_PROOF,
     balancesIndex: BALANCES_INDEX,
-    signature
+    signature,
+    listerNonce: getOptimizedNonce(USER_LISTED_NONCE || []),
+    subscriptionSettlementNumber: USER_SUBSCRIPTION_NUMBER || 0,
+
 }
 const tx = nume_contract.methods.submitWithdrawalRequest(args)
 const data = tx.encodeABI()

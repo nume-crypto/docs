@@ -14,7 +14,6 @@
   - [Token transfer and withdrawal](guides/token-transfer.md)
   - [NFT minting](guides/nft-minting.md)
   - [NFT trades](guides/nft-trades.md)
-  - [Webhooks](guides/webhooks.md)
   - [JSON RPC](guides/jsonrpc-methods.md)
   - [Indexer](guides/indexer.md)
 - [Tutorials](tutorials.md)

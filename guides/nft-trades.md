@@ -7,7 +7,7 @@ Endpoint : `POST /marketplace/list-nft`
 **Request**
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/list-nft' \
+curl --location '{{apiUrl}}marketplace/list-nft' \
 --header 'Content-Type: application/json' \
 --data ' {
     "user": "0xCcFf350Ef46B85228d6650a802107e58BF6A32Ab",
@@ -63,7 +63,7 @@ Endpoint : `POST /marketplace/buy-nft`
 **Request**
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/buy-nft' \
+curl --location '{{apiUrl}}marketplace/buy-nft' \
 --header 'Content-Type: application/json' \
 --data '{
     "user": "0x1b34B2f706cDA183E4818D2ceaF58253CcAb3428",
@@ -106,7 +106,7 @@ Endpoint : `POST /marketplace/unlist-nft`
 **Request**
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/unlist-nft' \
+curl --location '{{apiUrl}}marketplace/unlist-nft' \
 --header 'Content-Type: application/json' \
 --data '{
     "user": "0x1b34B2f706cDA183E4818D2ceaF58253CcAb3428",
@@ -141,7 +141,7 @@ Endpoint : `GET /marketplace/transaction-history/:contractAddress/:tokenId`
 **Request**
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/marketplace/transaction-history/0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344/18'
+curl --location '{{apiUrl}}marketplace/transaction-history/0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344/18'
 ```
 
 **Parameters:**

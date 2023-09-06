@@ -7,7 +7,7 @@ Our chain uses EVM compatible addresses to identify users. This means that you c
 Endpoint : `GET /fetch-user-data/:address`
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-data/0xccff350ef46b85228d6650a802107e58bf6a32ab'
+curl --location '{{apiUrl}}fetch-user-data/0xccff350ef46b85228d6650a802107e58bf6a32ab'
 ```
 
 **Parameters:**
@@ -42,7 +42,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-data/0xccff35
 Endpoint : `GET /fetch-user-balance/:address`
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-balance/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a'
+curl --location '{{apiUrl}}fetch-user-balance/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a'
 ```
 
 **Parameters:**
@@ -82,7 +82,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-balance/0x467
 Endpoint : `GET /fetch-user-balance/:address/:tokenAddress`
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-balance/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a/0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80'
+curl --location '{{apiUrl}}fetch-user-balance/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a/0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80'
 ```
 
 **Parameters:**
@@ -115,7 +115,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-balance/0x467
 Endpoint : `GET /fetch-user-balance/:address/:tokenAddress`
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-proof/0x29f1df30dfa1f627fcfe35c24597d202cf72238f/0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80'
+curl --location '{{apiUrl}}fetch-user-proof/0x29f1df30dfa1f627fcfe35c24597d202cf72238f/0xEe146Fac7b2fce5FdBE31C36d89cF92f6b006F80'
 ```
 
 **Parameters:**
@@ -162,7 +162,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-proof/0x29f1d
 Endpoint : `GET /fetch-nft-user-owner/:tokenAddress/:tokenId`
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/fetch-nft-user-owner/0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344/18'
+curl --location '{{apiUrl}}fetch-nft-user-owner/0x6d9e72d1336e3592f5e4844b9e18e484fc4cf344/18'
 ```
 
 **Parameters:**
@@ -188,7 +188,7 @@ curl --location 'https://api.protocol.numecrypto.com/v2/fetch-nft-user-owner/0x6
 Endpoint : `GET /fetch-user-balance/:address`
 
 ```sh
-curl --location 'https://api.protocol.numecrypto.com/v2/fetch-user-nft-balance/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a'
+curl --location '{{apiUrl}}fetch-user-nft-balance/0x46714661eecb6f07065dcb4bf3d9b772dcefa63a'
 ```
 
 **Parameters:**

@@ -22,9 +22,3 @@ To start using the Nume bridge, you need to add the desired chain's RPC endpoint
 - WBTC: ```0xE096C6C74228c764edf3553df1E1954b7cD00542``` ( 8 decimals ) import as ERC20
 - ETH: ```0x1111111111111111111111111111111111111111``` ( 18 decimals ) import as ERC20
 
-<!-- **Nume Polygon mainnet** :
-- Network Name: Nume
-- New RPC URL: https://rpc.numecrypto.com
-- Chain ID: 711
-- Currency Symbol: MATIC
-- Block Explorer URL: https://explorer.numecrypto.com -->
