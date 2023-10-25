@@ -9,10 +9,10 @@ To start using the Nume bridge, you need to add the desired chain's RPC endpoint
 
 **Nume testnet** :
 - Network Name: Nume Testnet
-- New RPC URL: https://rpc.numecrypto.com
+- New RPC URL: https://testnet.rpc.numecrypto.com
 - Chain ID: 7101
 - Currency Symbol: NDAI
-- Block Explorer URL: https://dev.explorer.numecrypto.com
+- Block Explorer URL: https://testnet.explorer.numecrypto.com
 
 **Nume testnet tokens** :
 - WMATIC: ```0x8b58a817770AC1424931396CEc4969d2032CbB46``` ( 18 decimals ) import as ERC20

@@ -15,6 +15,7 @@ Settlement leaf is a data structure that contains the following information:
 - Balances root
 - Last signed nonce
 - Optimized lister nonce hash
+- Subscribed settlement number
 
 ```js
 const leafHash = (user, balanceRoot, nonce, listerNonce, subNum) => {
