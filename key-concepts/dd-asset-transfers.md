@@ -33,7 +33,7 @@ const tx = {
 }
 const signedTx = await wallet.signTransaction(tx)
 ```
-?>  Use the signedTx for making the transfer [API call](../guides/asset-transfer.md)
+?>  Use the signedTx for making the transfer [API call](../guides/token-transfer.md?id=create-transaction)
 
 # Tokens currently supported on Nume
 
