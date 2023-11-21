@@ -12,5 +12,6 @@
 
 📄️ [JSON RPC](./guides/jsonrpc-methods.md) In this section we will cover the JSON RPC methods supprted.
 
-
 📄️ [Indexer](./guides/indexer.md) In this section we will cover the indexer APIs.
+
+📄️ [Subscription](./guides/subscription.md) In this section we will cover the subscription APIs.
