@@ -1,6 +1,6 @@
 # What is it?
 
-Nume is a gas abstracted, scalable and secure web3 payments protocol with primitives tailored for commerce. Nume chose to build on zkEVM because it is the most scalable EVM-compatible infrastructure platform on Ethereum. The Nume Protocol will launch as a Layer-3 on Polygon zkEVM. However until support for necessary precompiles is introduced, we will operate on the Polygon zkEVM chain starting Q3 2023.
+Nume is a gas abstracted, scalable and secure web3 payments protocol with primitives tailored for commerce. Nume chose to build on zkEVM because it is the most scalable EVM-compatible infrastructure platform on Ethereum. The Nume Protocol will launch as a Layer-3 on Polygon zkEVM.
 
 Nume is a platform that provides:
 

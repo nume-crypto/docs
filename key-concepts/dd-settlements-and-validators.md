@@ -51,5 +51,5 @@ ethers.utils.solidityKeccak256(
 
 Settlements are run periodically, e.g. every 30 minutes. Transactions queued up in that duration (off-chain asset transfers, nft mints, trades, on-chain deposits, off-chain withdrawal requests, on-chain withdrawal requests) are all processed at the 30-minute mark. Processing these off-chain involves spinning up a Trusted Execution Environment where these transactions are verified (signature, nonce, balances) and the state transition resulting from these transactions is computed.  The new resultant state is attested by the settlement verification address (SVA).  The Nume contract verifies the signature and updates the state. The new state is now the current state of the Nume protocol.
 
-In other words, validators of the Nume protocol register themselves with the smart-contract. They collectively agree to the SVA address which is a AWS-KMS ECDSA key and publish it to the Nume contract. Only the TEE has the permission to sign with the SVA address.
+In other words, validators of the Nume protocol register themselves with the smart-contract. They collectively agree to the SVA address which is a AZURE INTEL-SGX ECDSA key and publish it to the Nume contract. Only the TEE has the permission to sign with the SVA address.
 

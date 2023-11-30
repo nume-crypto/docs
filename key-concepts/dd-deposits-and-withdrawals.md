@@ -11,7 +11,7 @@
 Users can transfer assets between Nume and Polygon zkEVM, depending on the desired transaction layer. This enables them to benefit from lower transaction fees on Nume for actions like buying or selling NFTs, with the flexibility to withdraw to Polygon zkEVM when transacting on that layer.
 
 ### Terminology
-- **Deposits** - Deposits involve transferring assets from Nume to Polygon zkEVM (adding funds to Nume).
+- **Deposits** - Deposits involve transferring assets from Polygon zkEVM to Nume (adding funds to Nume).
 - **Withdrawal** - Withdrawals involve transferring assets from Nume to Polygon zkEVM (withdrawing from Nume).
 - **Bridging** - Bridging refers to transferring assets between different layers.
 
@@ -57,7 +57,7 @@ Here's what happens under the hood when a **trusted withdrawal** is made on Nume
 Guidelines for submitting a [trusted withdrawal request](./guides/token-transfer?id=create-transaction)
 
 Here's what happens under the hood when a **trustless withdrawal** is made on Nume:
-- User submits a withdrawal request to the Polygon zkEVM nume contract directly by providing his proof of ownership of the asset on Nume and 0.005 ETH as stake.
+- User submits a withdrawal request to the Polygon zkEVM nume contract directly by providing his proof of ownership of the asset on Nume and 0.01 ETH as stake.
 - The nume contract verifies the proof and processes the withdrawal request. If the proof is invalid the withdrawal request is rejected.
 - When the new settlement root is signed off all the withdrawal requests will be processed and the user will receive the asset on Polygon zkEVM and the stake amount will be returned to the user.
 
@@ -103,16 +103,18 @@ let message = USER_ADDRESS.slice(2) + BLOCK_NUMBER.toString(16).padStart(64, '0'
 let signature = await sign( message, USER_PRIVATE_KEY)
 const args = {
     user: USER_ADDRESS,
-    nonce: SIGNED_NONCE,
     tokenAddress: TOKEN_ADDRESS,
-    balance: TOKEN_BALANCE,
+    balanceOrTokenId: TOKEN_BALANCE/NFT_TOKEN_ID,
+    isNft: true/false,
+    mintedNft: true/false,
+    nonce: SIGNED_NONCE,
+    listerNonce: getOptimizedNonce(USER_LISTED_NONCE || []),
     accountsProof: ACCOUNTS_PROOF,
     accountsIndex: ACCOUNTS_INDEX,
     balancesRoot: BALANCES_ROOT,
     balancesProof: BALANCES_PROOF,
     balancesIndex: BALANCES_INDEX,
     signature,
-    listerNonce: getOptimizedNonce(USER_LISTED_NONCE || []),
     subscriptionSettlementNumber: USER_SUBSCRIPTION_NUMBER || 0,
 
 }
@@ -121,7 +123,7 @@ const data = tx.encodeABI()
 const signedTx = await web3.eth.accounts.signTransaction({
     to: NUME_CONTRACT_ADDRESS,
     data,
-    value: '5000000000000000',
+    value: '10000000000000000',
     gas: web3.utils.toHex(200000),
     gasPrice: web3.utils.toHex(200),
     chainId: CHAIN_ID,
