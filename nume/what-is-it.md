@@ -23,7 +23,7 @@ Key features of the Nume protocol::
    - The Nume Protocol is non-custodial and guarantees that a settlement with unauthorized changes to users’ balances will not succeed on-chain.
 4. **Instant Confirmation**
    - No blockchain delays, payments are confirmed instantly on Nume. Close the loop for your customers.
-5. **Decentralized Governance** (COMING SOON)
+5. **Decentralized Governance**
    - The protocol is governed by validators. Any changes to the Nume off chain state verification algorithm requires validators’ signature.
 
 
@@ -40,7 +40,7 @@ Nume provides the key functionality you’ll need to build web3 payments, token-
 
 - Minting NFTs
 - Transferring assets to other users
-- Depositing assets to nume (ie. ERC20 tokens)
+- Bridging assets to nume (ie. ERC20 tokens)
 - Buying and selling assets
 
 2. Retrieve data about current state and historical transactions

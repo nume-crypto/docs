@@ -17,7 +17,7 @@ ERC721 tokens are non-fungible tokens, meaning that each token is unique and not
 const tx = {
   to: web3.utils.toHex(ERC20_CONTRACT_ADDRESS),
   gasLimit: web3.utils.toHex(50000),
-  maxFeePerGas: web3.utils.toHex(web3.utils.toWei('2000', 'gwei')),
+  maxFeePerGas: web3.utils.toHex(web3.utils.toWei('2000', 'gwei')), // 4000 gwei for withdrawals
   maxPriorityFeePerGas: web3.utils.toHex(web3.utils.toWei('0', 'gwei')),
   value: web3.utils.toHex(web3.utils.toWei('0', 'ether')),
   nonce: web3.utils.toHex(USER_NONCE + 1),
@@ -27,11 +27,27 @@ const tx = {
   data:
     '0xa9059cbb' + // transfer(address,uint256)
     ethers.utils
-      .solidityPack(['address', 'uint256'], [toUserAddress, tokenValue])
+      .solidityPack(['address', 'uint256'], [TO_ADDRESS, TOKEN_VALUE]) // to address should be the same as the one used to sign the transaction for withdrawal
       .slice(2)
       .padStart(128, '0'),
 }
 const signedTx = await wallet.signTransaction(tx)
+```
+
+```js
+// data for ERC721 transfer
+data:
+  '0x23b872dd' +
+  ethers.utils
+    .solidityPack(
+      ['bytes32', 'bytes32', 'uint256'],
+      [
+        FROM_ADDRESS,
+        TO_ADDRESS,
+        TOKEN_ID,
+      ],
+    )
+    .slice(2),
 ```
 ?>  Use the signedTx for making the transfer [API call](../guides/token-transfer.md?id=create-transaction)
 

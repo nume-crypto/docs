@@ -16,14 +16,15 @@ Users can transfer assets between Nume and Polygon zkEVM, depending on the desir
 - **Bridging** - Bridging refers to transferring assets between different layers.
 
 ### ABI (Application Binary Interface)
-- The Deposit ABI for the nume contract can be found [here](https://abis.s3.amazonaws.com/deposit_facet.abi)
-- The Withdrawal ABI for the nume contract can be found [here](https://abis.s3.amazonaws.com/withdrawal_facet.abi)
+- The ERC20 Deposit ABI for the nume contract can be found [here](https://nume-public.s3.amazonaws.com/abis/deposit_facet.abi)
+- The NFT ABI for the nume contract can be found [here](https://nume-public.s3.amazonaws.com/abis/nft_deposit_facet.abi)
+- The Withdrawal ABI for the nume contract can be found [here](https://nume-public.s3.amazonaws.com/abis/withdrawal_facet.abi)
 
 # Deposits
 
 Here's what happens under the hood when a deposit is made on Nume:
 - User transfers the Token from Polygon zkEVM to the Nume contract on Polygon zkEVM
-- The transfer function emits an event which is read by Nume's server and an asset identifier is created that represents the asset, so that it can be utilized and transacted with on nume.
+- The transfer function emits an event which is read by Nume's server and an asset identifier is created, so that it can be utilized and transacted with on nume.
 
 Sample code for depositing ERC20
 ```js
@@ -136,3 +137,5 @@ await web3.eth.sendSignedTransaction(signedTx.rawTransaction)
 
 # Mass exit scenario
 During a mass exit scenario, users can efficiently withdraw their assets from Nume to Polygon zkEVM. Users can submit a withdrawal request directly to the Polygon zkEVM Nume contract, which verifies the proof and processes the withdrawal. If the proof is invalid, the withdrawal request is rejected.
+
+?> **Deposit and withdrawal is limited to 6 per day to prevent bad actors from overwhelming our system, but there's no limit on the amounts to withdraw or deposit.**
