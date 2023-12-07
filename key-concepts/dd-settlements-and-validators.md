@@ -53,3 +53,12 @@ Settlements are run periodically, e.g. every 30 minutes. Transactions queued up 
 
 Validators of the Nume protocol collectively agree to the SVA address which is generated and handled by intel SGX and publish it to the Nume contract. Only the TEE has the permission to sign with the SVA address.
 
+
+## How SVA is handled?
+Nume enclave is a trusted execution environment that runs on a SGX enabled machine and the code can be found in [here](https://github.com/nume-crypto/nume-enclave-p2p).
+Every time there is a code change caused by a feature addiotion or a bug fix the following steps happen 
+- A new enclave is built in a SGX enabled machine.
+- The enclave generates a private key and seals it with the unique id and returns the address (SVA).
+- Nume creates a proposal for change on tally and the validators vote on it. [Nume DAO](https://www.tally.xyz/gov/Nume-Crypto-prod) is used for governance.
+- The proposal lasts for 14 days, the community can go through the chagnes and if not in favour can exit the network. They can also verify the enclaves unique id by reporducing the build by following the steps in the [sgx uniqueid verification docs](https://www.notion.so/numecrypto/Sgx-unqiueid-verification-5ff9223339774b428f6f5f6e9b8a483d)
+- Once the proposal is passed the new SVA is updated in the Nume contract.
