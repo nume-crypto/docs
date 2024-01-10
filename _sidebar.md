@@ -17,6 +17,7 @@
   - [JSON RPC](guides/jsonrpc-methods.md)
   - [Indexer](guides/indexer.md)
   - [Subscription](guides/subscription.md)
+  - [Gas sponsoring](guides/gas-sponsoring.md)
 - [Tutorials](tutorials.md)
   - [Build your own dapp on nume](tutorials/build-your-own-dapp-on-nume.md)
   - [Asset transfer](tutorials/asset-transfer.md)
